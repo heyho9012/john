@@ -1,0 +1,178 @@
+/* main.css */
+html { scroll-behavior: smooth; }
+
+#wrap { width: 100%; height: auto; margin: auto; }
+
+article, footer { width: 100%; height: 100vh; }
+
+section { width: 100%; height: auto; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; border: 3px solid #060606; }
+
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment { display: block; height: 10px; background-color: #333; }
+
+::-webkit-scrollbar-track { background: #1d1d1d; }
+
+::-webkit-scrollbar-thumb { height: 50px; width: 50px; background-color: #777; }
+
+#headBox { float: left; position: relative; z-index: 300; width: 100%; height: 122px; background-color: transparent; padding-top: 4rem; box-sizing: border-box; transition: all 1s ease; }
+
+nav { width: 1258px; height: 58px; margin: auto; }
+
+nav h1 { float: left; width: 58px; height: 58px; background-image: url("../img/logo.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; }
+
+nav h1 a { display: block; width: 100%; height: 100%; }
+
+nav h1 a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+nav ul { float: right; width: 332px; height: 100%; }
+
+nav ul li { float: left; margin-right: 2.0625rem; width: 58px; height: 58px; background-color: transparent; border: 1.5px solid #666; box-sizing: border-box; border-radius: 100%; line-height: 55px; font-size: 12px; font-weight: normal; transition: all .8s ease; }
+
+nav ul li a { display: block; width: 100%; height: 100%; text-align: center; color: #e0e0e0; font-weight: bold; border-radius: 100%; }
+
+nav ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+nav ul li:hover { transform: rotate(360deg); border: 1.5px solid #e0e0e0; }
+
+nav ul li:last-child { margin-right: 0; }
+
+#mainBox { position: relative; background-color: #060606; }
+
+#mainBox ul { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 820px; height: 200px; }
+
+#mainBox ul li { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 490px; height: 200px; }
+
+#mainBox ul li:nth-child(3) { width: 820px; }
+
+#mainBox ul h2 { color: #fff; font-size: 180px; width: 100%; height: 100%; }
+
+#mainBox ul h2:after, #mainBox ul h2::after { content: ""; display: block; position: absolute; bottom: -24px; width: 490px; height: 28px; background-image: url("../img/border_bottom_w.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; }
+
+#mainBox ul li:nth-child(3) h2:after, #mainBox ul li:nth-child(3) h2::after { width: 820px; }
+
+#mainBox p { position: absolute; left: 50%; transform: translateX(-50%); bottom: 284px; width: 800px; height: 30px; color: #fff; text-align: center; }
+
+#mainBox div { position: absolute; left: 0; right: 0; margin: auto; bottom: 48px; width: 50px; height: 34px; animation: bounce .5s ease infinite alternate; }
+
+#mainBox div a { display: block; width: 100%; height: 100%; color: #ccc; font-size: 1.25rem; line-height: 2.125rem; text-align: center; }
+
+#mainBox div a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+@keyframes bounce { 100% { bottom: 54px; } }
+
+#aboutBox { position: relative; background-color: #e0e0e0; overflow: hidden; }
+
+#aboutBox h2 { position: absolute; top: 700px; right: 330px; font-size: 11.25rem; width: 420px; height: 240px; text-align: center; opacity: 0; transition: all .8s ease; }
+
+#aboutBox h2:after, #aboutBox h2::after { content: ""; display: block; position: absolute; bottom: 20px; width: 420px; height: 28px; background-image: url("../img/border_bottom_b.png"); background-size: contain; background-repeat: no-repeat; background-position: 50% 50%; }
+
+.about_text { position: absolute; top: 700px; left: 330px; width: 720px; height: 240px; font-size: 2.25rem; font-family: 'KCC-eunyoung-Regular'; line-height: 3.75rem; opacity: 0; transition: all 3s ease; }
+
+.about_text span { font-size: 3.25rem; display: inline-table; position: relative; z-index: 100; overflow: hidden; }
+
+.about_text span::before { content: ""; display: block; position: absolute; z-index: -1; top: 0; left: -100%; width: 100%; height: 100%; background-color: rgba(238, 244, 0, 0.4); transition: all .8s ease; }
+
+.about_text span:nth-of-type(2)::before { transition-delay: .5s; }
+
+.about_text:hover span::before { left: 0; }
+
+.fix_menu { position: absolute; z-index: 300; top: 50%; transform: translateY(-50%); right: -20px; width: 80px; height: 160px; opacity: 0; transition: all 1s ease; }
+
+.fix_menu ul { width: 100%; height: 100%; }
+
+.fix_menu ul li { float: right; position: relative; width: 100%; height: 24px; margin-bottom: 24px; }
+
+.fix_menu ul li:last-child { margin-bottom: 0; }
+
+.fix_menu ul li:last-child span { left: 0; }
+
+.fix_menu ul li span { position: absolute; top: 50%; transform: translateY(-50%); left: 10px; display: none; width: 6px; height: 6px; border-radius: 100%; background-color: #666; display: none; }
+
+.fix_menu ul li a { display: block; width: 80px; height: 100%; float: right; color: #666; font-size: 1rem; text-align: right; line-height: 1.25rem; transition: all .5s ease; }
+
+.fix_menu ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+.fix_menu ul li a:hover { margin-right: 5px; }
+
+#aboutBox h2.action, .about_text.action { top: 50%; transform: translateY(-50%); opacity: 1; }
+
+.fix_menu.real_fix { position: fixed; right: 60px; opacity: 1; }
+
+#aboutCon { position: relative; }
+
+#aboutCon .title { position: absolute; left: 50%; top: 36px; transform: translateX(-50%); width: 228px; height: 72px; }
+
+#aboutCon .title li { float: left; width: 86px; height: 100%; margin-right: 56px; }
+
+#aboutCon .title li a { display: block; width: 100%; height: 100%; font-size: 4.375rem; text-align: center; color: #060606; }
+
+#aboutCon .title li:last-child { margin-right: 0; }
+
+#aboutCon ul:last-child { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 50px; height: 12px; }
+
+#aboutCon ul:last-child li { float: left; width: 12px; height: 12px; margin-right: 1.625rem; border-radius: 100%; background-color: #060606; }
+
+#aboutCon ul:last-child li:last-child { margin-right: 0; }
+
+#aboutCon ul:last-child li a { display: block; width: 100%; height: 100%; border-radius: 100%; }
+
+#aboutCon ul:last-child li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+#workBox { position: relative; background-color: #e0e0e0; }
+
+#workBox h2 { position: absolute; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; top: 700px; font-size: 11.25rem; width: 420px; height: 200px; text-align: center; opacity: 0; transition: all 1.5s ease; }
+
+#workBox h2:after, #workBox h2::after { content: ""; display: block; position: absolute; bottom: -24px; width: 420px; height: 28px; background-image: url("../img/border_bottom_b.png"); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; }
+
+#workBox dl { position: absolute; right: 330px; bottom: 108px; width: 300px; height: 108px; text-align: right; }
+
+#workBox dl dt { width: 100%; height: 28px; font-size: 1.5rem; font-weight: bold; margin-bottom: 1.75rem; }
+
+#workBox dl dd { width: 100%; height: 64px; padding-left: 12.125rem; box-sizing: border-box; }
+
+#workBox dl dd a { float: right; display: block; width: 74px; height: 28px; margin-bottom: 0.5rem; font-size: 1.25rem; text-align: right; }
+
+#workBox dl dd a:last-child { width: 60px; margin-bottom: 0; }
+
+#workBox h2.action { opacity: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+
+#workCon { position: relative; height: 1800px; padding-top: 11.25rem; box-sizing: border-box; }
+
+#workCon ul { width: 1280px; height: 600px; margin: auto; }
+
+#workCon ul li { width: 100%; height: 600px; margin-right: 9.25rem; margin-bottom: 11.25rem; }
+
+#workCon ul li:last-child { margin-right: 0; margin-bottom: 0; }
+
+#workCon ul li dl { width: 100%; height: 100%; }
+
+#workCon ul li dl dt { width: 100%; height: 10%; font-size: 4.375rem; text-align: center; margin-bottom: 3.75rem; }
+
+#workCon ul li dl dd { width: 100%; height: 90%; background-color: #060606; }
+
+#workCon ul li dl dd a { display: block; width: 100%; height: 100%; }
+
+#workCon ul li dl dd a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+#footBox { position: relative; background-color: #060606; }
+
+#footBox ul { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 290px; height: 100px; }
+
+#footBox ul li { position: relative; width: 100%; height: 52px; margin-bottom: 0.625rem; overflow: hidden; }
+
+#footBox ul li:last-child { margin-bottom: 0; }
+
+#footBox ul li a { color: #fff; font-size: 24px; line-height: 3.125rem; }
+
+#footBox ul li a::before { content: ""; position: absolute; bottom: 0; width: 100%; height: 1.2px; background-color: #ee0; opacity: 0; transition: all 1s ease; }
+
+#footBox ul li:nth-child(1) a::before { left: -100%; }
+
+#footBox ul li:nth-child(2) a::before { left: 100%; }
+
+#footBox ul li:hover a:before { left: 0; opacity: 1; }
+
+.timer { position: absolute; left: 50%; transform: translateX(-50%); bottom: 120px; width: 204px; height: 50px; color: #fff; line-height: 3.125rem; font-size: 2rem; font-weight: lighter; text-align: center; }
+
+.copy { position: absolute; left: 50%; transform: translateX(-50%); bottom: 54px; width: 516px; height: 52px; color: #fff; font-size: 1rem; text-align: center; line-height: 1.625rem; }
