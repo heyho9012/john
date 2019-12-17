@@ -1,6 +1,9 @@
 (function($){
 
     const win = $(window),
+          htmlEl = $('html,body'),
+          wrap = $('#wrap'),
+          scrollEl = wrap.find('.scroll'),
           mainBox=$('#mainBox'),
           aboutBox=$('#aboutBox'),
           workBox=$('#workBox'),
@@ -8,6 +11,62 @@
           mainList=mainUl.find('li'),
           fixMenu=$('.fix_menu');
 
+// ------------------------------------------------
+
+    const gnbLink=$('#gnb').find('li').find('a');
+    gnbLink.on('click',function(e){
+        e.preventDefault();
+        if($(this).parent('li').index()==0){useN=0;}
+        else if($(this).parent('li').index()==1){useN=1;}
+        else if($(this).parent('li').index()==2){useN=4;}
+        else if($(this).parent('li').index()==3){useN=7;}
+        ScrollMagic();
+    });
+    // --------------------------------
+    const fixLink=$('.fix_menu').find('li').find('a');
+    fixLink.on('click',function(e){
+        e.preventDefault();
+        if($(this).parent('li').index()==0){useN=0;}
+        else if($(this).parent('li').index()==1){useN=1;}
+        else if($(this).parent('li').index()==2){useN=4;}
+        else if($(this).parent('li').index()==3){useN=7;}
+        ScrollMagic();
+    });
+    // --------------------------------
+
+    htmlEl.animate({scrollTop:0});
+    let myScrollElTop = [];
+    let scrollLen = scrollEl.length;
+    let timed = 800;
+
+    for(let i=0;i<scrollLen;i++){
+       let scTop = scrollEl.eq(i).offset().top;
+       myScrollElTop.push(scTop);
+    }
+
+    let myStatus=true, n, useN=0;
+
+    const ScrollMagic = function(){
+        htmlEl.animate({scrollTop:myScrollElTop[useN]},
+           timed,'easeOutSine',function(){
+               myStatus = true;
+      });
+    }; // scrollMagic()
+
+    $(window).on('mousewheel DOMMouseScroll',function(e){
+        if(e.originalEvent.wheelDelta){
+            n = e.originalEvent.wheelDelta * -1;
+        }else{n = e.originalEvent.delta * 40;}
+
+        if(myStatus){
+            myStatus = false;
+          if(n > 0){useN++;
+           if(useN >= scrollLen){useN = scrollLen-1;} ScrollMagic();
+         }else{useN--;
+           if(useN < 0){useN = 0;} ScrollMagic();}
+        }
+    });
+ 
 // ------------------------------------------------
 
     let winH=win.outerHeight();          
@@ -20,7 +79,6 @@
 
         let winScroll = win.scrollTop();
         // ---------------------------------
-console.log(winScroll);
         if(winScroll>800){fixMenu.addClass('real_fix')}
         else{fixMenu.removeClass('real_fix')}
 
@@ -39,17 +97,17 @@ console.log(winScroll);
         }
 
         let fixTime=800;
-        if(winScroll<=2336){
+        if(winScroll<=3143){
             fixMenu.find('li').eq(1).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(1).siblings().find('span').fadeOut(fixTime);
-        }else if(winScroll<=3999){
+        }else if(winScroll<=5938){
             fixMenu.find('li').eq(2).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(2).siblings().find('span').fadeOut(fixTime);
-        }else if(winScroll>=4080){
+        }else if(winScroll>=5939){
             fixMenu.find('li').eq(3).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(3).siblings().find('span').fadeOut(fixTime);
         }
-
+        console.log(winScroll);
     });
 
 // ------------------------------------------------

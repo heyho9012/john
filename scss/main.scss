@@ -1,7 +1,6 @@
 // main.scss
 /* main.css */
 @import './_base/mixin';
-html{scroll-behavior:smooth;}
 #wrap{width:100%;height:auto;margin:auto;}
 article,footer{width:100%;height:100vh;}
 section{width:100%;height:auto;}
@@ -17,9 +16,9 @@ section{width:100%;height:auto;}
             a{@include link;}
         }
         ul{float:right;width:332px;height:100%;
-            li{float:left;margin-right:2.0625rem;width:58px;height:58px;background-color:transparent;border:1.5px solid #666;box-sizing:border-box;border-radius:100%;line-height:55px;font-size:12px;font-weight:normal;transition:all .8s ease;
+            li{float:left;margin-right:2.0625rem;width:58px;height:58px;background-color:transparent;border:1.5px solid #060606;box-sizing:border-box;border-radius:100%;line-height:3.4375rem;font-size:12px;font-weight:normal;transition:all .8s ease;
                 a{@include link;text-align:center;color:#e0e0e0;font-weight:bold;border-radius:100%;}
-                &:hover{transform:rotate(360deg);border:1.5px solid #e0e0e0;}
+                &:hover{border:1.5px solid #fff;transform:rotate(360deg);a{color:#fff;}}
             }
             li:last-child{margin-right:0;}
         }
@@ -47,7 +46,7 @@ section{width:100%;height:auto;}
     .about_text{position:absolute;top:700px;left:330px;width:720px;height:240px;font-size:2.25rem;font-family:'KCC-eunyoung-Regular';line-height:3.75rem;opacity:0;transition:all 3s ease;
         span{font-size:3.25rem;display:inline-table;position:relative;z-index:100;overflow:hidden;}
         span::before{content:"";display:block;position:absolute;z-index:-1;top:0;left:-100%;width:100%;height:100%;background-color:rgba(238,244,0,.4);transition:all .8s ease;}
-        span:nth-of-type(2)::before{transition-delay:.5s;}
+        span:nth-of-type(2)::before{transition:all 1.2s ease;}
         &:hover span::before{left:0;}
     }
     .fix_menu{position:absolute;z-index:300;top:50%;transform:translateY(-50%);right:-20px;width:80px;height:160px;opacity:0;transition:all 1s ease;
@@ -66,20 +65,9 @@ section{width:100%;height:auto;}
     #aboutBox h2.action,.about_text.action{top:50%;transform:translateY(-50%);opacity:1;}
     .fix_menu.real_fix{position:fixed;right:60px;opacity:1;}
 //------------------------------------------------------------------------------
-#aboutCon{position:relative;
-    .title{position:absolute;left:50%;top:36px;transform:translateX(-50%);width:228px;height:72px;
-        li{float:left;width:86px;height:100%;margin-right:56px;
-            a{display:block;width:100%;height:100%;font-size:4.375rem;text-align:center;color:#060606;}
-            &:last-child{margin-right:0;}
-        }
-    }
-    ul:last-child{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);width:50px;height:12px;
-        li{float:left;width:12px;height:12px;margin-right:1.625rem;border-radius:100%;background-color:#060606;
-            &:last-child{margin-right:0;}
-            a{@include link;border-radius:100%;}
-        }
-    }
-}
+#aboutCon{position:relative;}
+#aboutCon_02{position:relative;}
+
 //------------------------------------------------------------------------------
 #workBox{position:relative;background-color:#e0e0e0;
     h2{position:absolute;@include center;top:700px;font-size:11.25rem;width:420px;height:200px;text-align:center;opacity:0;transition:all 1.5s ease;}
@@ -94,13 +82,13 @@ section{width:100%;height:auto;}
 }
 #workBox h2.action{opacity:1;@include center;}
 //------------------------------------------------------------------------------
-#workCon{position:relative;padding-top:4.25rem;box-sizing:border-box;
-    ul{width:1280px;height:100%;margin:auto;
-        li{width:100%;height:100%;
-            &:last-child{margin-right:0;margin-bottom:0;}
-            dl{width:100%;height:100%;
-                dt{width:100%;height:10%;font-size:4.375rem;text-align:center;margin-bottom:1.25rem;}
-                dd{width:100%;height:80%;
+#workCon{position:relative;height:auto;
+    ul{width:100%;height:auto;margin:auto;
+        li{width:100%;height:100vh;
+            &:last-child{margin-right:0;}
+            dl{width:100%;height:100%;padding-top:68px;box-sizing:border-box;
+                dt{width:100%;height:10%;font-size:4.375rem;text-align:center;margin-bottom:100px;}
+                dd{width:70%;height:60%;margin:auto;
                     >div{float:left;}
                 }
             }
