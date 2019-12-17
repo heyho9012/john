@@ -33,7 +33,13 @@
         ScrollMagic();
     });
     // --------------------------------
-
+    const downClick=$('.down_click').find('a');
+    downClick.on('click',function(e){
+        e.preventDefault();
+        useN=1;
+        ScrollMagic();
+    });
+    // --------------------------------
     htmlEl.animate({scrollTop:0});
     let myScrollElTop = [];
     let scrollLen = scrollEl.length;
@@ -107,7 +113,6 @@
             fixMenu.find('li').eq(3).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(3).siblings().find('span').fadeOut(fixTime);
         }
-        console.log(winScroll);
     });
 
 // ------------------------------------------------
