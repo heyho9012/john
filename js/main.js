@@ -107,7 +107,6 @@
             fixMenu.find('li').eq(3).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(3).siblings().find('span').fadeOut(fixTime);
         }
-        console.log(winScroll);
     });
 
 // ------------------------------------------------
