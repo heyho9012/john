@@ -14,26 +14,34 @@
 // ------------------------------------------------
 
     const gnbLink=$('#gnb').find('li').find('a');
-    gnbLink.on('click',function(e){
-        e.preventDefault();
-        if($(this).parent('li').index()==0){useN=0;}
-        else if($(this).parent('li').index()==1){useN=1;}
-        else if($(this).parent('li').index()==2){useN=4;}
-        else if($(this).parent('li').index()==3){useN=7;}
-        ScrollMagic();
-    });
-    // --------------------------------
     const fixLink=$('.fix_menu').find('li').find('a');
-    fixLink.on('click',function(e){
+
+    const linkScroll = function(link){
+        link.on('click',function(e){
+            let liIndex=$(this).parent('li').index();
+            e.preventDefault();
+            if(liIndex==0){useN=0;}
+            else if(liIndex==1){useN=1;}
+            else if(liIndex==2){useN=4;}
+            else if(liIndex==3){useN=7;}
+            ScrollMagic();
+        });
+        return link;
+    };
+
+    linkScroll(gnbLink);
+    linkScroll(fixLink);
+
+    // --------------------------------
+    
+    const downClick=$('.down_click').find('a');
+    downClick.on('click',function(e){
         e.preventDefault();
-        if($(this).parent('li').index()==0){useN=0;}
-        else if($(this).parent('li').index()==1){useN=1;}
-        else if($(this).parent('li').index()==2){useN=4;}
-        else if($(this).parent('li').index()==3){useN=7;}
+        useN=1;
         ScrollMagic();
     });
-    // --------------------------------
 
+    // --------------------------------
     htmlEl.animate({scrollTop:0});
     let myScrollElTop = [];
     let scrollLen = scrollEl.length;
