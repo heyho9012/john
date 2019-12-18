@@ -101,9 +101,7 @@ nav ul li:last-child { margin-right: 0; }
 
 #aboutCon { position: relative; padding-top: 64px; }
 
-.my_image { position: relative; width: 250px; height: 250px; margin: auto; box-sizing: border-box; border-radius: 100%; border: 2px solid #060606; margin-bottom: 1rem; }
-
-.my_image:after, .my_image::after { content: ""; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 220px; border: 8px solid #060606; border-radius: 100%; box-sizing: border-box; }
+.my_image { position: relative; width: 250px; height: 250px; margin: auto; box-sizing: border-box; border-radius: 100%; border: 1.5px solid #e0e0e0; margin-bottom: 1rem; }
 
 .about_list { width: 1680px; height: 720px; margin: auto; }
 
