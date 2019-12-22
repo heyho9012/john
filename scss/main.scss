@@ -84,7 +84,7 @@ section{width:100%;height:auto;}
         li{float:right;width:100%;height:72px;font-size:1rem;text-align:left;line-height:0;
             &:nth-child(2n){text-align:right;span{margin-right:273px;margin-left:0;}p{float:left;margin-left:-50%;}}
             &:nth-child(n+2){margin-bottom:0.25rem;}
-            span{display:inline-block;margin-left:275px;width:12px;height:12px;border-radius:100%;background-color:#1d1d1d;opacity:0;transition:all 2s ease 1s;}
+            span{display:inline-block;margin-left:275px;width:12px;height:12px;border-radius:100%;background-color:#1d1d1d;opacity:0;transition:all 1.5s ease 1s;}
             p{width:47%;height:100%;float:right;margin-right:-50%;line-height:1.125rem;opacity:0;transition:all 2s ease;}
     }}}
 .history div.action{top:0;opacity:1;}
@@ -120,20 +120,33 @@ section{width:100%;height:auto;}
 #workBox h2.action{opacity:1;@include center;}
 //------------------------------------------------------------------------------
 #workCon{position:relative;height:auto;
-    ul{width:100%;height:auto;margin:auto;
-        li{width:100%;height:100vh;
+    >ul{width:100%;height:auto;margin:auto;
+        >li{width:100%;height:100vh;
             &:last-child{margin-right:0;}
-            dl{width:100%;height:100%;padding-top:68px;box-sizing:border-box;
-                dt{width:100%;height:10%;font-size:4.375rem;text-align:center;margin-bottom:100px;}
-                dd{width:70%;height:60%;margin:auto;
+            >dl{width:100%;height:100%;padding-top:68px;box-sizing:border-box;
+                >dt{width:100%;height:10%;font-size:4.375rem;text-align:center;margin-bottom:100px;}
+                >dd{width:70%;height:60%;margin:auto;
                     >div{float:left;}
                 }
             }
         }
     }
 }
-.project_img{width:50%;height:100%;background-color:#060606;}
-.project_text{width:50%;height:100%;background-color:#e0e0e0;}
+.project_img{position:relative;width:50%;height:100%;overflow:hidden;transition:all 1.6s ease;
+    &:hover{background-size:108%;}
+}
+.project_01_img{@include bg("../img/project/project_01.png",50%,50%,400%);}
+.project_02_img{@include bg("../img/preparing.png",50%,50%,400%);}
+.project_text{width:50%;height:100%;
+    dl{width:100%;height:100%;
+        dt{width:100%;height:20%;font-size:2.5rem;font-weight:bold;line-height:1.5rem;padding-top:1.5rem;padding-left:3rem;box-sizing:border-box; span{font-size:1.25rem;line-height:0;}}
+        dd{width:100%;height:80%;padding-left:3rem;padding-top:1.5rem;box-sizing:border-box;
+            a{@include link(162px,42px);line-height:42px;font-size:1.25rem;text-align:center;background-color:#1d1d1d;color:#fff;margin-top:8rem;
+                &:hover{background-color:#fff;color:#1d1d1d;border:2px solid #1d1d1d;box-sizing:border-box;line-height:38px;}
+            }
+        }
+    }
+}
 //------------------------------------------------------------------------------
 #footBox{position:relative;background-color:#060606;
     ul{@include center;width:290px;height:100px;
