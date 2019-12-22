@@ -6,6 +6,7 @@
           scrollEl = wrap.find('.scroll'),
           mainBox=$('#mainBox'),
           aboutBox=$('#aboutBox'),
+          aboutCon=$('#aboutCon')
           workBox=$('#workBox'),
           mainUl=mainBox.find('ul'),
           mainList=mainUl.find('li'),
@@ -65,7 +66,6 @@
         if(e.originalEvent.wheelDelta){
             n = e.originalEvent.wheelDelta * -1;
         }else{n = e.originalEvent.delta * 40;}
-
         if(myStatus){
             myStatus = false;
           if(n > 0){useN++;
@@ -80,6 +80,8 @@
     let winH=win.outerHeight();          
     let aboutOffset=aboutBox.offset().top-(winH/3);
     let workOffset=workBox.offset().top-(winH/3);
+    let aboutConOffset=aboutCon.offset().top-(winH/3);
+    const history=$('.history');
 
 // --------------------------------------------------------------
 
@@ -115,6 +117,17 @@
             fixMenu.find('li').eq(3).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(3).siblings().find('span').fadeOut(fixTime);
         }
+
+        if(winScroll>aboutConOffset){
+            history.find('div').addClass('action');
+            history.find('span').addClass('action');
+            history.find('p').addClass('action');
+        }else{
+            history.find('div').removeClass('action');
+            history.find('span').removeClass('action');
+            history.find('p').removeClass('action');
+        }
+
     });
 
 // ------------------------------------------------
