@@ -38,20 +38,18 @@ const progressArc = function(r){
 
 let j = 0;
 const graphGo = function(s){
-    go = setInterval(function(){
+    setInterval(function(){
         if(j < s){
         ctx.beginPath();
         ctx.lineWidth =16;
         ctx.strokeStyle = resultArr[index].color;
         progressArc(++j);
-
         ctx.stroke(); 
         }else{
             clearInterval();
         }
-    },500);
+    },200);
 }
-
 
 let winH=win.outerHeight();          
 let skillOffset=skillBox.offset().top-(winH/3);
