@@ -6,8 +6,9 @@
           scrollEl = wrap.find('.scroll'),
           mainBox=$('#mainBox'),
           aboutBox=$('#aboutBox'),
-          aboutCon=$('#aboutCon')
+          aboutCon=$('#aboutCon'),
           workBox=$('#workBox'),
+          footBox=$('#footBox'),
           mainUl=mainBox.find('ul'),
           mainList=mainUl.find('li'),
           fixMenu=$('.fix_menu');
@@ -80,6 +81,7 @@
     let winH=win.outerHeight();          
     let aboutOffset=aboutBox.offset().top-(winH/3);
     let workOffset=workBox.offset().top-(winH/3);
+    let footOffset=footBox.offset().top-(winH/2);
     let aboutConOffset=aboutCon.offset().top-(winH/3);
     const history=$('.history');
 
@@ -99,7 +101,7 @@
             aboutBox.find('h2').removeClass('action');
             $('.about_text').removeClass('action');
         }
-        
+
         if(winScroll>workOffset){
             workBox.find('h2').addClass('action');              
         }else{
@@ -107,13 +109,13 @@
         }
 
         let fixTime=800;
-        if(winScroll<=3143){
+        if(winScroll<workOffset){
             fixMenu.find('li').eq(1).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(1).siblings().find('span').fadeOut(fixTime);
-        }else if(winScroll<=5938){
+        }else if(winScroll>=workOffset&&winScroll<footOffset){
             fixMenu.find('li').eq(2).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(2).siblings().find('span').fadeOut(fixTime);
-        }else if(winScroll>=5939){
+        }else if(winScroll>=footOffset){
             fixMenu.find('li').eq(3).find('span').fadeIn(fixTime);
             fixMenu.find('li').eq(3).siblings().find('span').fadeOut(fixTime);
         }
@@ -142,6 +144,7 @@
         mainList.eq(i).fadeIn(2000);
         mainList.eq(i).siblings().fadeOut(2000);
     },4000);
+// ------------------------------------------------
 
 // ------------------------------------------------ Hours Minutes Seconds
 

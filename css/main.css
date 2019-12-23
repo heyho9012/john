@@ -137,7 +137,7 @@ nav ul li:last-child { margin-right: 0; }
 
 .history ul li:nth-child(n+2) { margin-bottom: 0.25rem; }
 
-.history ul li span { display: inline-block; margin-left: 275px; width: 12px; height: 12px; border-radius: 100%; background-color: #1d1d1d; opacity: 0; transition: all 1.5s ease 1s; }
+.history ul li span { display: inline-block; margin-left: 275px; width: 12px; height: 12px; border-radius: 100%; background-color: #1d1d1d; opacity: 0; transition: all 1s ease 1s; }
 
 .history ul li p { width: 47%; height: 100%; float: right; margin-right: -50%; line-height: 1.125rem; opacity: 0; transition: all 2s ease; }
 
@@ -163,13 +163,19 @@ nav ul li:last-child { margin-right: 0; }
 
 #aboutCon_02 dl dd ul { width: 100%; height: 100%; font-family: 'Open Sans'; font-weight: bold; }
 
-#aboutCon_02 dl dd ul li { float: left; width: 114px; height: 100%; margin-right: 4.25rem; }
+#aboutCon_02 dl dd ul li { position: relative; float: left; width: 114px; height: 100%; margin-right: 4.25rem; }
 
 #aboutCon_02 dl dd ul li:last-child { margin-right: 0; }
 
 #aboutCon_02 dl dd ul li div { width: 104px; height: 104px; margin: auto; }
 
 #aboutCon_02 dl dd ul li p { width: 100%; margin-top: 2.25rem; }
+
+.my_can { width: 114px; height: 114px; }
+
+.my_can + em { position: absolute; top: 36px; left: 50%; transform: translateX(-50%); font-style: normal; font-size: 1.5rem; text-align: center; }
+
+.my_can + em span { font-size: 0.75rem; }
 
 .pub { width: 1206px; margin: auto; margin-bottom: 4.375rem; }
 
