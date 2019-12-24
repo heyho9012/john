@@ -33,16 +33,13 @@
 
     linkScroll(gnbLink);
     linkScroll(fixLink);
-
     // --------------------------------
-    
     const downClick=$('.down_click').find('a');
     downClick.on('click',function(e){
         e.preventDefault();
         useN=1;
         ScrollMagic();
     });
-
     // --------------------------------
     htmlEl.animate({scrollTop:0});
     let myScrollElTop = [];
@@ -75,7 +72,7 @@
            if(useN < 0){useN = 0;} ScrollMagic();}
         }
     });
- 
+
 // ------------------------------------------------
 
     let winH=win.outerHeight();          
@@ -122,14 +119,11 @@
 
         if(winScroll>aboutConOffset){
             history.find('div').addClass('action');
-            history.find('span').addClass('action');
             history.find('p').addClass('action');
         }else{
             history.find('div').removeClass('action');
-            history.find('span').removeClass('action');
             history.find('p').removeClass('action');
         }
-
     });
 
 // ------------------------------------------------
@@ -141,10 +135,9 @@
     setInterval(function(){
         i++;
         if(i>=3){i=0;}
-        mainList.eq(i).fadeIn(2000);
-        mainList.eq(i).siblings().fadeOut(2000);
-    },4000);
-// ------------------------------------------------
+        mainList.eq(i).fadeIn(1800);
+        mainList.eq(i).siblings().fadeOut(1800);
+    },3000);
 
 // ------------------------------------------------ Hours Minutes Seconds
 
@@ -165,4 +158,5 @@
     },100);
 
 // ------------------------------------------------
+
 })(jQuery);

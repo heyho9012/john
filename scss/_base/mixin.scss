@@ -8,16 +8,3 @@
 @mixin bg($url,$pX,$pY,$c:cover){background-image:url($url);background-repeat:no-repeat;background-position:$pX $pY;background-size:$c;}
 
 @mixin center(){position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;}
-
-@mixin indicator_square($select,$pL:50%,$pB:8vh){
-  #{$select}{position:absolute;z-index:500;left:$pL;bottom:$pB;transform:translateX(-50%);width:auto;height:auto;
-    >ul{width:auto;height:auto;
-      >li{float:left;width:20px;height:20px;margin-left:8px;border:2px solid #fff;box-sizing:border-box;
-        &:first-child{margin-left:0;} 
-      }
-      a{@include link;
-        &>span{@include hidden;}
-      }
-    }
-  }
-} // @mixin indicator

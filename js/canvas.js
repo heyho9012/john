@@ -6,13 +6,13 @@ const workBox=$('#workBox');
 
 // const resultArr = [90, 80, 50];
 const resultArr = [
-    {sj:'html5', sc:85, color:'#e04b24'},
-    {sj:'css', sc:90, color:'#006ab4'},
-    {sj:'jquery', sc:80, color:'#0268ac'},
-    {sj:'javascript', sc:65, color:'#F7E018'},
-    {sj:'responsive', sc:80, color:'#555555'},
-    {sj:'web', sc:80, color:'#555555'},
-    {sj:'git', sc:70, color:'#1d1d1d'},
+    {sj:'html5', sc:85, color:'#444444'},
+    {sj:'css', sc:90, color:'#444444'},
+    {sj:'jquery', sc:80, color:'#444444'},
+    {sj:'javascript', sc:65, color:'#444444'},
+    {sj:'responsive', sc:80, color:'#444444'},
+    {sj:'web', sc:80, color:'#444444'},
+    {sj:'git', sc:70, color:'#444444'},
     {sj:'illustrator', sc:80, color:'#FF7C00'},
     {sj:'photoshop', sc:70, color:'#26C9FF'},
     {sj:'indesign', sc:50, color:'#FF5FA5'}
