@@ -135,8 +135,8 @@ section{width:100%;height:auto;}
 .project_img{position:relative;width:50%;height:100%;overflow:hidden;transition:all 1.6s ease;
     &:hover{background-size:108%;}
 }
-.project_01_img{@include bg("../img/project/project_01.png",50%,50%,400%);}
-.project_02_img{@include bg("../img/preparing.png",50%,50%,400%);}
+.project_01_img{@include bg("../img/project/project_01.jpg",50%,50%,400%);}
+.project_02_img{@include bg("../img/project/project_02.jpg",50%,50%,400%);}
 .project_text{width:50%;height:100%;
     dl{width:100%;height:100%;
         dt{width:100%;height:20%;font-size:2.5rem;font-weight:bold;line-height:1.5rem;padding-top:1.5rem;padding-left:3rem;box-sizing:border-box; span{font-size:1.25rem;line-height:0;}}
