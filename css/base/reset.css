@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-html, body{margin: 0; padding:0; width: 100%; height: 100%;color: #060606; font-family:'Open Sans', 'SpoqaHanSans', sans-serif;}
+html, body{margin: 0; padding:0; width: 100%; height: 100%; color: #060606; font-family:'Open Sans', 'SpoqaHanSans', sans-serif;}
 h2,#aboutCon a,#workCon li>dl>dt,.about_list dt{font-family:'Wilderness Typeface'; font-weight:normal;}
 h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,p, pre,img{margin: 0;padding: 0; border:0;}
 h1{font-weight:bold;}
@@ -9,15 +9,6 @@ ul,li,ol{list-style:none;}
 table,thead,tbody,tfoot,tr,th,td{margin: 0;padding: 0;border-spacing: 0;border-collapse: collapse;
                                  border: 1px solid #777;}
 a{color:#1d1d1d;text-decoration: none;}
-/* a:hover{color:#f07;}
-a:focus{outline:2px solid #f06;} */
-
-#wrap #contentBox .black_btn a:hover p{background-color: #02512D;border:none;color:#fff;line-height:3.5rem;}
-#wrap #contentBox .white_btn a:hover p{background-color: #f89626;border:none; color:#1d1d1d;font-weight:bold;line-height:3.5rem;}
-#wrap #contentBox .black_btn a:active p,#wrap #contentBox .black_btn a:focus p{background-color:transparent;color:#02512D;border:2px solid #02512D;}
-#wrap #contentBox .white_btn a:active p,#wrap #contentBox .white_btn a:focus p{background-color:transparent;color:#f89626;border:2px solid #f89626;}
-
-.unb li:nth-child(2) a:hover{color: #f89626;}
 
 abbr{text-decoration: none;text-transform:uppercase;}
 hr{margin:0; padding:0;border-bottom:1px solid #333;}
