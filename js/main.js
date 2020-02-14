@@ -60,7 +60,7 @@
       });
     }; // scrollMagic()
 
-    $(window).on('mousewheel DOMMouseScroll',function(e){
+    $(window).on('mousewheel touchmove DOMMouseScroll',function(e){
         if(e.originalEvent.wheelDelta){
             n = e.originalEvent.wheelDelta * -1;
         }else{n = e.originalEvent.delta * 40;}

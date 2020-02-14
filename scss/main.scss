@@ -1,7 +1,14 @@
 // main.scss
 /* main.css */
 @import './_base/mixin';
-#wrap{width:100%;height:auto;min-height:100%;margin:auto;overflow-x:hidden;min-width:1680px;}
+//------------------------------------------------------------------------------
+@import "_temp/_mobile";
+@import "_temp/_tablet";
+@import "_temp/_pc_default";
+@import "_temp/_pc_full";
+
+//------------------------------------------------------------------------------
+#wrap{width:100%;height:auto;min-height:100%;margin:auto;overflow-x:hidden;}
 article,footer{width:100%;height:100vh;}
 section{width:100%;height:auto;}
 //------------------------------------------------------------------------------
@@ -165,3 +172,7 @@ section{width:100%;height:auto;}
     .timer{position:absolute;left:50%;transform:translateX(-50%);bottom:120px;width:204px;height:50px;color:#fff;line-height:3.125rem;font-size:2rem;font-weight:lighter;text-align:center;}
     .copy{position:absolute;left:50%;transform:translateX(-50%);bottom:54px;width:516px;height:52px;color:#fff;font-size:1rem;text-align:center;line-height:1.625rem;}
 //------------------------------------------------------------------------------
+// @include pc_full;
+// @include pc_default;
+// @include tablet;
+// @include mobile;

@@ -1,0 +1,5 @@
+@mixin pc_full {
+    @media screen and (min-width:1920px) {
+        @content;
+    }
+}
