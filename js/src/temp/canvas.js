@@ -36,6 +36,10 @@ const progressArc = function(r){
     ctx.arc(108,108,84,0,myR(r));
 };
 
+const progressArcM = function(r){
+    ctx.arc(58,58,24,0,myR(r));
+};
+
 let j = 0;
 const graphGo = function(s){
     setInterval(function(){
@@ -51,17 +55,52 @@ const graphGo = function(s){
     },200);
 }
 
+const graphGoM = function(s){
+    setInterval(function(){
+        if(j < s){
+        ctx.beginPath();
+        ctx.lineWidth =8;
+        ctx.strokeStyle = resultArr[index].color;
+        progressArcM(++j);
+        ctx.stroke(); 
+        }else{
+            clearInterval();
+        }
+    },200);
+}
+
 let winH=win.outerHeight();          
 let skillOffset=skillBox.offset().top-(winH/3);
-win.on('scroll', function(){
-    let winScroll = win.scrollTop();
-    if(winScroll>=skillOffset){
-        graphGo(resultArr[index].sc);
-    }else{
-        graphGo(false);
-    }
-});
+const GraphFn = function(){
+    win.on('scroll', function(){
+        let winScroll = win.scrollTop();
+        if(winScroll>=skillOffset){
+            graphGo(resultArr[index].sc);
+        }else{
+            graphGo(false);
+        }
+    });
+};
 
+const GraphFnM = function(){
+    win.on('scroll', function(){
+        let winScroll = win.scrollTop();
+        if(winScroll>=skillOffset){
+            graphGoM(resultArr[index].sc);
+        }else{
+            graphGoM(false);
+        }
+    });
+};
+
+const DeviceGr = function(winW){
+    if(winW <= mobile){
+        GraphFnM();
+    } else {
+        GraphFn();
+    }
+}; // DeviceSet 조건문 함수화처리
+DeviceGr(beforeW);
 });
 
 

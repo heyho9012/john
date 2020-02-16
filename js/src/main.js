@@ -60,19 +60,31 @@
       });
     }; // scrollMagic()
 
-    $(window).on('mousewheel touchmove DOMMouseScroll',function(e){
-        if(e.originalEvent.wheelDelta){
-            n = e.originalEvent.wheelDelta * -1;
-        }else{n = e.originalEvent.delta * 40;}
-        if(myStatus){
-            myStatus = false;
-          if(n > 0){useN++;
-           if(useN >= scrollLen){useN = scrollLen-1;} ScrollMagic();
-         }else{useN--;
-           if(useN < 0){useN = 0;} ScrollMagic();}
+    const ScrollFn = function(){
+        $(window).on('mousewheel touchmove DOMMouseScroll',function(e){
+            if(e.originalEvent.wheelDelta){
+                n = e.originalEvent.wheelDelta * -1;
+            }else{n = e.originalEvent.delta * 40;}
+            if(myStatus){
+                myStatus = false;
+              if(n > 0){useN++;
+               if(useN >= scrollLen){useN = scrollLen-1;} ScrollMagic();
+             }else{useN--;
+               if(useN < 0){useN = 0;} ScrollMagic();}
+            }
+        });
+    };
+    const tablet=1279;
+    let beforeW = $(window).outerWidth(true);//margin값까지 포함.
+    const DeviceScr = function(winW){
+        if(winW <= tablet){
+            ScrollFn();
+        } else {
+            ScrollFn();
         }
-    });
-
+    }; // DeviceSet 조건문 함수화처리
+    DeviceScr(beforeW);
+    
 // ------------------------------------------------
 
     let winH=win.outerHeight();          
@@ -88,7 +100,7 @@
 
         let winScroll = win.scrollTop();
         // ---------------------------------
-        if(winScroll>800){fixMenu.addClass('real_fix')}
+        if(winScroll>aboutOffset){fixMenu.addClass('real_fix')}
         else{fixMenu.removeClass('real_fix')}
 
         if(winScroll>aboutOffset){

@@ -33,6 +33,8 @@
                 span::before{content:"";display:block;z-index:-1;top:0;left:-100%;}
             }
             #aboutBox h2.action,.about_text.action{top:50%;transform:translateY(-50%);opacity:1;}
+            .fix_menu{right:60px;}
+            .fix_menu.real_fix{right:60px;}
         
 //------------------------------------------------------------------------------
         #aboutCon{padding-top:4rem;}
@@ -77,8 +79,8 @@
 }}}
 
 //------------------------------------------------------------------------------
-#workCon{height:auto;
-    >ul{height:auto;
+#workCon{
+    >ul{
         >li{
             &:last-child{margin-right:0;}
             >dl{padding-top:4rem;
