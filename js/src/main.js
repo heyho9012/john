@@ -59,9 +59,9 @@
                myStatus = true;
       });
     }; // scrollMagic()
-
     const ScrollFn = function(){
         $(window).on('mousewheel touchmove DOMMouseScroll',function(e){
+            e.preventDefault();
             if(e.originalEvent.wheelDelta){
                 n = e.originalEvent.wheelDelta * -1;
             }else{n = e.originalEvent.delta * 40;}
@@ -78,7 +78,7 @@
     let beforeW = $(window).outerWidth(true);//margin값까지 포함.
     const DeviceScr = function(winW){
         if(winW <= tablet){
-            ScrollFn();
+
         } else {
             ScrollFn();
         }
