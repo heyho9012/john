@@ -1,7 +1,7 @@
 /* main.css */
-#wrap { width: 100%; height: auto; min-width: 380px; min-height: 100%; margin: auto; overflow-x: hidden; }
+#wrap { width: 100%; min-width: 380px; min-height: 100%; margin: auto; overflow-x: hidden; }
 
-article, footer { width: 100%; height: 100vh; }
+article { width: 100%; height: 100vh; }
 
 section { width: 100%; height: auto; }
 
@@ -57,7 +57,7 @@ nav ul li:last-child { margin-right: 0; }
 
 @keyframes bounce { 100% { bottom: 54px; } }
 
-#aboutBox { position: relative; background-color: #e0e0e0; overflow: hidden; }
+#aboutBox { position: absolute; background-color: #e0e0e0; overflow: hidden; }
 
 #aboutBox h2 { position: absolute; text-align: center; opacity: 0; transition: all 1.5s ease; }
 
@@ -93,7 +93,7 @@ nav ul li:last-child { margin-right: 0; }
 
 .fix_menu.real_fix { position: fixed; right: 60px; opacity: 1; }
 
-#aboutCon { position: relative; box-sizing: border-box; }
+#aboutCon { position: absolute; box-sizing: border-box; }
 
 .about_list { margin: auto; }
 
@@ -141,7 +141,7 @@ nav ul li:last-child { margin-right: 0; }
 
 .history li:nth-child(2n) p.action { margin-left: 0; }
 
-#aboutCon_02 { position: relative; padding-top: 5.5rem; box-sizing: border-box; }
+#aboutCon_02 { position: absolute; padding-top: 5.5rem; box-sizing: border-box; }
 
 #aboutCon_02 h2 { width: 100%; height: auto; text-align: center; }
 
@@ -165,7 +165,7 @@ nav ul li:last-child { margin-right: 0; }
 
 .my_can + em { position: absolute; top: 36px; left: 50%; transform: translateX(-50%); font-style: normal; text-align: center; }
 
-#workBox { position: relative; background-color: #e0e0e0; }
+#workBox { position: absolute; background-color: #e0e0e0; }
 
 #workBox h2 { position: absolute; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; text-align: center; opacity: 0; transition: all 1.5s ease; }
 
@@ -183,11 +183,11 @@ nav ul li:last-child { margin-right: 0; }
 
 #workBox h2.action { opacity: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
 
-#workCon { position: relative; height: auto; }
+#workCon { position: absolute; height: 200%; }
 
-#workCon > ul { width: 100%; height: auto; margin: auto; }
+#workCon > ul { width: 100%; height: 100%; margin: auto; }
 
-#workCon > ul > li { width: 100%; height: 100vh; }
+#workCon > ul > li { width: 100%; height: 50%; }
 
 #workCon > ul > li:last-child { margin-right: 0; }
 
@@ -219,7 +219,7 @@ nav ul li:last-child { margin-right: 0; }
 
 .project_text dl dd a:hover { background-color: #fff; color: #1d1d1d; border: 2px solid #1d1d1d; box-sizing: border-box; }
 
-#footBox { position: relative; background-color: #060606; }
+#footBox { width: 100%; background-color: #060606; }
 
 #footBox ul { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; height: 100px; }
 
@@ -311,6 +311,7 @@ nav ul li:last-child { margin-right: 0; }
   .project_text dl dd a { display: block; width: 162px; height: 42px; line-height: 42px; font-size: 1.25rem; margin-top: 8rem; }
   .project_text dl dd a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
   .project_text dl dd a:hover { border: 2px solid #1d1d1d; box-sizing: border-box; line-height: 38px; }
+  #footBox { position: absolute; height: 1080px; }
   #footBox ul { width: 290px; height: 100px; }
   #footBox ul li { height: 52px; margin-bottom: 0.625rem; }
   #footBox ul li:last-child { margin-bottom: 0; }
