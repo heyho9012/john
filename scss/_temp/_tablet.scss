@@ -1,6 +1,7 @@
 @mixin tablet {
     @media screen and (min-width:768px) and (max-width:1279px) {
         @content;
+        article,footer{min-height:1024px;}
         #headBox{height:122px;padding-top:2rem;}
         nav{width:700px;height:58px;
             h1{width:58px;height:58px;}
@@ -64,7 +65,7 @@
             ul{
                 li{width:108px;margin-right:40.4px; &:nth-child(4),&:last-child{margin-right:0;} div{width:104px;height:104px;} p{margin-top:1rem;}}
 }}}}
-.my_can+em{top:36px;left:50%;transform:translateX(-50%);font-size:1.5rem;span{font-size:0.75rem;}}
+.my_can+em{position:absolute;top:2.5rem;left:50%;transform:translateX(-50%);font-size:1.5rem;span{font-size:0.75rem;}}
 .pub{width:558px;margin:auto;margin-bottom:5rem;}
 .des{width:408px;margin:auto;}
 
@@ -80,9 +81,9 @@
 }}}
 
 //------------------------------------------------------------------------------
-#workCon{height:auto;
-    >ul{height:auto;
-        >li{
+#workCon{min-height:2048px;
+    >ul{min-height:2048px;
+        >li{min-height:1024px;
             &:last-child{margin-right:0;}
             >dl{padding-top:4.5rem;
                 >dt{height:10%;font-size:70px;margin-bottom:100px;}
@@ -93,8 +94,8 @@
 }
 .project_text{width:100%;height:auto;
     dl{
-        dt{width:200%;height:auto;font-size:1.875rem;line-height:1.5rem;padding-left:0.75rem;padding-top:1.5rem; span{font-size:1rem;line-height:0;}}
-        dd{width:200%;height:200px;padding-left:0.75rem;padding-top:1.5rem;
+        dt{width:100%;height:auto;font-size:1.875rem;line-height:1.5rem;padding-left:0.75rem;padding-top:1.5rem; span{font-size:1rem;line-height:0;}}
+        dd{width:100%;height:200px;padding-left:0.75rem;padding-top:1.5rem;
             a{@include link(162px,42px);line-height:42px;font-size:1.25rem;margin-top:1.5rem;
                 &:hover{border:2px solid #1d1d1d;line-height:38px;}
 }}}}

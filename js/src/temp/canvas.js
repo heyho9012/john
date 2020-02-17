@@ -36,10 +36,6 @@ const progressArc = function(r){
     ctx.arc(108,108,84,0,myR(r));
 };
 
-const progressArcM = function(r){
-    ctx.arc(58,58,24,0,myR(r));
-};
-
 let j = 0;
 const graphGo = function(s){
     setInterval(function(){
@@ -48,20 +44,6 @@ const graphGo = function(s){
         ctx.lineWidth =16;
         ctx.strokeStyle = resultArr[index].color;
         progressArc(++j);
-        ctx.stroke(); 
-        }else{
-            clearInterval();
-        }
-    },200);
-}
-
-const graphGoM = function(s){
-    setInterval(function(){
-        if(j < s){
-        ctx.beginPath();
-        ctx.lineWidth =8;
-        ctx.strokeStyle = resultArr[index].color;
-        progressArcM(++j);
         ctx.stroke(); 
         }else{
             clearInterval();
@@ -82,20 +64,9 @@ const GraphFn = function(){
     });
 };
 
-const GraphFnM = function(){
-    win.on('scroll', function(){
-        let winScroll = win.scrollTop();
-        if(winScroll>=skillOffset){
-            graphGoM(resultArr[index].sc);
-        }else{
-            graphGoM(false);
-        }
-    });
-};
-
 const DeviceGr = function(winW){
     if(winW <= mobile){
-        GraphFnM();
+
     } else {
         GraphFn();
     }

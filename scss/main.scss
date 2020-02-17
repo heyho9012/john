@@ -8,7 +8,7 @@
 @import "_temp/_pc_full";
 
 //------------------------------------------------------------------------------
-#wrap{width:100%;min-width:380px;min-height:100%;margin:auto;}
+#wrap{width:100%;min-width:480px;min-height:100%;margin:auto;}
 article,footer{width:100%;height:100%;}
 
 //------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ article,footer{width:100%;height:100%;}
 .history li:nth-child(2n) p.action{margin-left:0;}
 
 //------------------------------------------------------------------------------
-#aboutCon_02{position:relative;padding-top:5.5rem;box-sizing:border-box;overflow-x:hidden;
+#aboutCon_02{position:relative;padding-top:5.5rem;box-sizing:border-box;
     h2{width:100%;height:auto;text-align:center; p{font-family:'Open Sans';color:#777;} }
     dl{text-align:center;color:#060606;
         dt{width:100%;height:32px;margin-bottom:3.25rem;font-weight:bold;}
@@ -101,7 +101,7 @@ article,footer{width:100%;height:100%;}
             ul{width:100%;height:100%;font-family:'Open Sans';font-weight:bold;
                 li{position:relative;float:left;height:100%;&:last-child{margin-right:0;} div{margin:auto;} p{width:100%;}}
 }}}}
-.my_can+em{position:absolute;top:36px;left:50%;transform:translateX(-50%);font-style:normal;text-align:center;}
+
 
 //------------------------------------------------------------------------------
 #workBox{position:relative;background-color:#e0e0e0;

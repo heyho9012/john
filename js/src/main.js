@@ -20,8 +20,8 @@
 
     const linkScroll = function(link){
         link.on('click',function(e){
-            let liIndex=$(this).parent('li').index();
             e.preventDefault();
+            let liIndex=$(this).parent('li').index();
             if(liIndex==0){useN=0;}
             else if(liIndex==1){useN=1;}
             else if(liIndex==2){useN=4;}
@@ -35,18 +35,22 @@
     linkScroll(fixLink);
     // --------------------------------
     const downClick=$('.down_click').find('a');
+
     downClick.on('click',function(e){
         e.preventDefault();
         useN=1;
         ScrollMagic();
     });
     // --------------------------------
+
     htmlEl.animate({scrollTop:0});
+
     let myScrollElTop = [];
     let scrollLen = scrollEl.length;
     let timed = 800;
 
     for(let i=0;i<scrollLen;i++){
+
        let scTop = scrollEl.eq(i).offset().top;
        myScrollElTop.push(scTop);
     }
@@ -54,14 +58,15 @@
     let myStatus=true, n, useN=0;
 
     const ScrollMagic = function(){
+
         htmlEl.animate({scrollTop:myScrollElTop[useN]},
            timed,'easeOutSine',function(){
                myStatus = true;
-      });
+        });
     }; // scrollMagic()
     const ScrollFn = function(){
+
         $(window).on('mousewheel touchmove DOMMouseScroll',function(e){
-            e.preventDefault();
             if(e.originalEvent.wheelDelta){
                 n = e.originalEvent.wheelDelta * -1;
             }else{n = e.originalEvent.delta * 40;}
@@ -76,6 +81,7 @@
     };
     const tablet=1279;
     let beforeW = $(window).outerWidth(true);//margin값까지 포함.
+    
     const DeviceScr = function(winW){
         if(winW <= tablet){
 
