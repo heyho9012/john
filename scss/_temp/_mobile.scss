@@ -81,9 +81,9 @@
         }}}
 
 //------------------------------------------------------------------------------
-        #workCon{min-height:1280px;
+        #workCon{min-height:1280px;height:300%;
             >ul{min-height:1280px;
-                >li{min-height:640px;
+                >li{min-height:640px;height:33.333333%;
                     &:last-child{margin-right:0;}
                     >dl{padding-top:1.75rem;
                         >dt{height:10%;font-size:3rem;margin-bottom:3.75rem;}

@@ -64,7 +64,7 @@
             ul{font-weight:bold;
                 li{width:114px;margin-right:4.25rem; &:last-child{margin-right:0;} div{width:104px;height:104px;} p{margin-top:2.25rem;}}
 }}}}
-.my_can+em{top:36px;left:50%;transform:translateX(-50%);font-size:1.5rem;span{font-size:0.75rem;}}
+.my_can+em{position:absolute;top:36px;left:50%;transform:translateX(-50%);font-size:1.5rem;span{font-size:0.75rem;}}
 .pub{width:1206px;margin:auto;margin-bottom:4.375rem;}
 .des{width:478px;margin:auto;}
 
@@ -80,9 +80,9 @@
 }}}
 
 //------------------------------------------------------------------------------
-#workCon{
+#workCon{height:300%;
     >ul{
-        >li{
+        >li{height:33.333333%;
             &:last-child{margin-right:0;}
             >dl{padding-top:68px;
                 >dt{height:10%;font-size:4.375rem;margin-bottom:100px;}
@@ -93,7 +93,7 @@
 }
 .project_text{width:50%;
     dl{
-        dt{height:20%;font-size:2.5rem;font-weight:bold;line-height:1.5rem;padding-top:1.5rem;padding-left:3rem;box-sizing:border-box; span{font-size:1.25rem;line-height:0;}}
+        dt{height:20%;font-size:2.5rem;font-weight:bold;line-height:1.75rem;padding-top:1.5rem;padding-left:3rem;box-sizing:border-box; span{font-size:1.25rem;}}
         dd{height:80%;padding-left:3rem;padding-top:1.5rem;box-sizing:border-box;
             a{@include link(162px,42px);line-height:42px;font-size:1.25rem;margin-top:8rem;
                 &:hover{border:2px solid #1d1d1d;box-sizing:border-box;line-height:38px;}

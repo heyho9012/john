@@ -179,11 +179,11 @@ nav ul li:last-child { margin-right: 0; }
 
 #workBox h2.action { opacity: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
 
-#workCon { position: relative; height: 200%; box-sizing: border-box; }
+#workCon { position: relative; box-sizing: border-box; }
 
 #workCon > ul { width: 100%; height: 100%; margin: auto; }
 
-#workCon > ul > li { width: 100%; height: 50%; }
+#workCon > ul > li { width: 100%; }
 
 #workCon > ul > li:last-child { margin-right: 0; }
 
@@ -202,6 +202,8 @@ nav ul li:last-child { margin-right: 0; }
 .project_01_img { background-image: url("../img/project/project_01.jpg"); background-repeat: no-repeat; background-position: 50% 50%; background-size: 400%; }
 
 .project_02_img { background-image: url("../img/project/project_02.jpg"); background-repeat: no-repeat; background-position: 50% 50%; background-size: 400%; }
+
+.project_03_img { background-image: url("../img/preparing.png"); background-repeat: no-repeat; background-position: 50% 50%; background-size: 400%; }
 
 .project_text { width: 50%; height: 100%; }
 
@@ -285,7 +287,7 @@ nav ul li:last-child { margin-right: 0; }
   #aboutCon_02 dl dd ul li:last-child { margin-right: 0; }
   #aboutCon_02 dl dd ul li div { width: 104px; height: 104px; }
   #aboutCon_02 dl dd ul li p { margin-top: 2.25rem; }
-  .my_can + em { top: 36px; left: 50%; transform: translateX(-50%); font-size: 1.5rem; }
+  .my_can + em { position: absolute; top: 36px; left: 50%; transform: translateX(-50%); font-size: 1.5rem; }
   .my_can + em span { font-size: 0.75rem; }
   .pub { width: 1206px; margin: auto; margin-bottom: 4.375rem; }
   .des { width: 478px; margin: auto; }
@@ -296,6 +298,8 @@ nav ul li:last-child { margin-right: 0; }
   #workBox dl dd { height: 64px; padding-left: 12.125rem; }
   #workBox dl dd a { width: 74px; height: 28px; margin-bottom: 0.5rem; font-size: 1.25rem; }
   #workBox dl dd a:last-child { width: 60px; margin-bottom: 0; }
+  #workCon { height: 300%; }
+  #workCon > ul > li { height: 33.333333%; }
   #workCon > ul > li:last-child { margin-right: 0; }
   #workCon > ul > li > dl { padding-top: 68px; }
   #workCon > ul > li > dl > dt { height: 10%; font-size: 4.375rem; margin-bottom: 100px; }
@@ -303,8 +307,8 @@ nav ul li:last-child { margin-right: 0; }
   .project_img { width: 50%; }
   .project_img:hover { background-size: 108%; }
   .project_text { width: 50%; }
-  .project_text dl dt { height: 20%; font-size: 2.5rem; font-weight: bold; line-height: 1.5rem; padding-top: 1.5rem; padding-left: 3rem; box-sizing: border-box; }
-  .project_text dl dt span { font-size: 1.25rem; line-height: 0; }
+  .project_text dl dt { height: 20%; font-size: 2.5rem; font-weight: bold; line-height: 1.75rem; padding-top: 1.5rem; padding-left: 3rem; box-sizing: border-box; }
+  .project_text dl dt span { font-size: 1.25rem; }
   .project_text dl dd { height: 80%; padding-left: 3rem; padding-top: 1.5rem; box-sizing: border-box; }
   .project_text dl dd a { display: block; width: 162px; height: 42px; line-height: 42px; font-size: 1.25rem; margin-top: 8rem; }
   .project_text dl dd a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
@@ -363,7 +367,7 @@ nav ul li:last-child { margin-right: 0; }
   #aboutCon_02 dl dd ul li:last-child { margin-right: 0; }
   #aboutCon_02 dl dd ul li div { width: 104px; height: 104px; }
   #aboutCon_02 dl dd ul li p { margin-top: 1.875rem; }
-  .my_can + em { top: 36px; left: 50%; transform: translateX(-50%); font-size: 1.5rem; }
+  .my_can + em { position: absolute; top: 36px; left: 50%; transform: translateX(-50%); font-size: 1.5rem; }
   .my_can + em span { font-size: 0.75rem; }
   .pub { width: 1000px; margin: auto; margin-bottom: 3rem; }
   .des { width: 408px; margin: auto; }
@@ -374,6 +378,8 @@ nav ul li:last-child { margin-right: 0; }
   #workBox dl dd { height: 64px; padding-left: 12.125rem; }
   #workBox dl dd a { display: block; width: 74px; height: 28px; margin-bottom: 0.5rem; font-size: 1rem; text-align: right; }
   #workBox dl dd a:last-child { width: 60px; margin-bottom: 0; }
+  #workCon { height: 300%; }
+  #workCon > ul > li { height: 33.333333%; }
   #workCon > ul > li:last-child { margin-right: 0; }
   #workCon > ul > li > dl { padding-top: 4rem; }
   #workCon > ul > li > dl > dt { height: 10%; font-size: 70px; margin-bottom: 100px; }
@@ -381,7 +387,7 @@ nav ul li:last-child { margin-right: 0; }
   .project_img { width: 50%; }
   .project_img:hover { background-size: 108%; }
   .project_text { width: 50%; }
-  .project_text dl dt { height: 20%; font-size: 1.875rem; line-height: 1.5rem; padding-top: 1.5rem; padding-left: 3rem; }
+  .project_text dl dt { height: 20%; font-size: 1.875rem; line-height: 1.75rem; padding-top: 1.5rem; padding-left: 3rem; }
   .project_text dl dt span { font-size: 1rem; line-height: 0; }
   .project_text dl dd { height: 80%; padding-left: 3rem; padding-top: 1.5rem; }
   .project_text dl dd a { display: block; width: 162px; height: 42px; line-height: 42px; font-size: 1.25rem; margin-top: 8rem; }
@@ -459,9 +465,9 @@ nav ul li:last-child { margin-right: 0; }
   #workBox dl dd { height: 64px; padding-left: 12.125rem; }
   #workBox dl dd a { display: block; width: 74px; height: 28px; margin-bottom: 0.5rem; font-size: 1rem; text-align: right; }
   #workBox dl dd a:last-child { width: 60px; margin-bottom: 0; }
-  #workCon { min-height: 2048px; }
+  #workCon { height: 300%; min-height: 2048px; }
   #workCon > ul { min-height: 2048px; }
-  #workCon > ul > li { min-height: 1024px; }
+  #workCon > ul > li { min-height: 1024px; height: 33.333333%; }
   #workCon > ul > li:last-child { margin-right: 0; }
   #workCon > ul > li > dl { padding-top: 4.5rem; }
   #workCon > ul > li > dl > dt { height: 10%; font-size: 70px; margin-bottom: 100px; }
@@ -469,7 +475,7 @@ nav ul li:last-child { margin-right: 0; }
   .project_img { width: 620px; height: 440px; }
   .project_img:hover { background-size: 108%; }
   .project_text { width: 100%; height: auto; }
-  .project_text dl dt { width: 100%; height: auto; font-size: 1.875rem; line-height: 1.5rem; padding-left: 0.75rem; padding-top: 1.5rem; }
+  .project_text dl dt { width: 100%; height: auto; font-size: 1.875rem; line-height: 1.75rem; padding-left: 0.75rem; padding-top: 1.5rem; }
   .project_text dl dt span { font-size: 1rem; line-height: 0; }
   .project_text dl dd { width: 100%; height: 200px; padding-left: 0.75rem; padding-top: 1.5rem; }
   .project_text dl dd a { display: block; width: 162px; height: 42px; line-height: 42px; font-size: 1.25rem; margin-top: 1.5rem; }
@@ -551,9 +557,9 @@ nav ul li:last-child { margin-right: 0; }
   #workBox dl dd { height: 64px; padding-left: 12.125rem; }
   #workBox dl dd a { display: block; width: 74px; height: 28px; margin-bottom: 0.25rem; font-size: 1rem; text-align: right; }
   #workBox dl dd a:last-child { width: 60px; margin-bottom: 0; }
-  #workCon { min-height: 1280px; }
+  #workCon { min-height: 1280px; height: 300%; }
   #workCon > ul { min-height: 1280px; }
-  #workCon > ul > li { min-height: 640px; }
+  #workCon > ul > li { min-height: 640px; height: 33.333333%; }
   #workCon > ul > li:last-child { margin-right: 0; }
   #workCon > ul > li > dl { padding-top: 1.75rem; }
   #workCon > ul > li > dl > dt { height: 10%; font-size: 3rem; margin-bottom: 3.75rem; }

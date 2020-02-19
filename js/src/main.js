@@ -25,7 +25,7 @@
             if(liIndex==0){useN=0;}
             else if(liIndex==1){useN=1;}
             else if(liIndex==2){useN=4;}
-            else if(liIndex==3){useN=7;}
+            else if(liIndex==3){useN=8;}
             ScrollMagic();
         });
         return link;
