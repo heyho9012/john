@@ -1,10 +1,126 @@
 // mixin.scss
-@mixin link($w:100%,$h:100%){display:block;width:$w;height:$h;&>span{@include hidden;}} // @mixin link()
+@mixin link ($w:100%,$h:100%) {
+    display: block;
+    width: $w;
+    height: $h;
+    & > span {
+        @include hidden;
+    }
+}
+// @mixin link()
 
-@mixin hidden{
-  position:absolute;z-index:-1;display:block;width:0;height:0;overflow:hidden;
-} // @mixin hidden
+@mixin hidden {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+// @mixin hidden
 
-@mixin bg($url,$pX,$pY,$c:cover){background-image:url($url);background-repeat:no-repeat;background-position:$pX $pY;background-size:$c;}
+@mixin background ($url,$pX,$pY,$c:cover) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: $pX $pY;
+    background-size: $c;
+}
 
-@mixin center(){position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;}
+@mixin flex ($fd : row, $jc : center, $ai : center) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin center ($top : 50%, $left : 50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-$top, -$left);
+    text-align: center;
+}
+
+@mixin all-btn ($w: 280px, $h: 48px, $fs: 1.25rem, $bl: 8px) {
+    > button {
+        overflow: hidden;
+        width: $w;
+        height: $h;
+        border-radius: $bl;
+        background-color: #060606;
+        color: #fff;
+        font-weight: normal;
+        font-size: $fs;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: $h;
+    }
+}
+
+@mixin port-btn($selector, $wh: 36px, $c: #e0e0e0) {
+    #{$selector} {
+        width: $wh;
+        height: $wh;
+        border-radius: 100%;
+        background-color: $c;
+        i {
+            margin: auto;
+            color: #060606;
+            font-weight: bold;
+            font-size: 0.875rem;
+            line-height: $wh;
+        }
+    }
+}
+
+// @mixin scrollbar {
+//     ::-webkit-scrollbar {
+//         width: 8px;
+//         height: 8px;
+//         border: 3px solid #060606;
+//     }
+//     ::-webkit-scrollbar-button:end:increment,
+//     ::-webkit-scrollbar-button:start:decrement {
+//         display: block;
+//         height: 10px;
+//         background-color: #333;
+//     }
+//     ::-webkit-scrollbar-track {
+//         background: #060606;
+//     }
+//     ::-webkit-scrollbar-thumb {
+//         height: 50px;
+//         width: 50px;
+//         background-color: #fff;
+//     }
+// } @include scrollbar();
+
+@keyframes main-animation {
+    0% { 
+        top: 52%;
+        transform:  translate(-50%, -50%) scale(1) rotateX(-15deg) rotateY(-30deg);
+    } 100% {
+        top: 48%;
+        transform:  translate(-50%, -50%) scale(1.4) rotateX(30deg) rotateY(15deg);
+    }
+}
+@keyframes t-z{
+    0% { 
+        transform:  translateZ(-100px) rotate(15deg);
+    } 100% {
+        transform:  translateZ(100px) rotate(-15deg);
+    }
+}
+@keyframes main-animation-2 {
+    0% { 
+        transform: rotateX(0);
+    } 100% {
+        transform: rotateX(1turn);
+    }
+}
+
+@keyframes bounce {
+    100% {
+        bottom: 2rem;
+    }
+}

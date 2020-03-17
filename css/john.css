@@ -1,0 +1,519 @@
+/* main.css */
+@keyframes main-animation { 0% { top: 52%;
+    transform: translate(-50%, -50%) scale(1) rotateX(-15deg) rotateY(-30deg); }
+  100% { top: 48%;
+    transform: translate(-50%, -50%) scale(1.4) rotateX(30deg) rotateY(15deg); } }
+
+@keyframes t-z { 0% { transform: translateZ(-100px) rotate(15deg); }
+  100% { transform: translateZ(100px) rotate(-15deg); } }
+
+@keyframes main-animation-2 { 0% { transform: rotateX(0); }
+  100% { transform: rotateX(1turn); } }
+
+@keyframes bounce { 100% { bottom: 2rem; } }
+
+article, footer { position: relative; box-sizing: border-box; width: 100%; height: 100%; }
+
+h2 { text-align: center; text-transform: capitalize; }
+
+h3 { text-transform: capitalize; }
+
+article:nth-of-type(2n) { background-color: #e0e0e0; }
+
+article:first-of-type, footer { background-color: #060606; }
+
+#headBox { display: flex; flex-direction: row; justify-content: center; align-items: flex-end; position: absolute; z-index: 100; top: 0; left: 0; width: 100%; background-color: transparent; }
+
+#headBox nav { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+
+#headBox nav h1 { background-image: url("../img/logo.png"); background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; height: 100%; }
+
+#headBox nav h1 a { display: block; width: 100%; height: 100%; }
+
+#headBox nav h1 a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+#headBox nav ul { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+
+#headBox nav ul li { height: 100%; border-radius: 100%; box-sizing: border-box; }
+
+#headBox nav ul li:last-of-type { position: relative; border: 1.5px solid #e0e0e0; transition: all .8s ease; }
+
+#headBox nav ul li:last-of-type.menu-act { transform: rotate(360deg); }
+
+#headBox nav ul li:last-of-type button { position: absolute; top: 50%; left: 50%; z-index: 1500; transform: translate(-50%, -50%); width: 16px; height: 12px; }
+
+#headBox nav ul li:last-of-type button span { display: block; position: absolute; width: 100%; height: 2px; border-radius: 0.0625rem; background-color: #fff; transition: all 0.5s ease; }
+
+#headBox nav ul li:last-of-type button span:nth-child(1) { top: 0; }
+
+#headBox nav ul li:last-of-type button span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+
+#headBox nav ul li:last-of-type button span:nth-child(3) { bottom: 0; }
+
+#headBox nav ul li:last-of-type button.menu-act span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+
+#headBox nav ul li:last-of-type button.menu-act span:nth-child(2) { opacity: 0; }
+
+#headBox nav ul li:last-of-type button.menu-act span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+#headBox nav ul li a { display: block; width: 100%; height: 100%; border: 1.5px solid #060606; box-sizing: border-box; border-radius: inherit; color: #e0e0e0; font-size: 0.75rem; font-weight: 600; text-align: center; transition: all 0.8s ease; }
+
+#headBox nav ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+#headBox nav ul li a:focus, #headBox nav ul li a:hover { border: 1.5px solid #e0e0e0; transform: rotate(360deg); }
+
+.menu-modal { display: none; position: fixed; z-index: -1; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; }
+
+.menu-modal ul { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; }
+
+.menu-modal ul li:nth-of-type(2) { margin: 2rem 0; }
+
+.menu-modal ul li a { display: block; width: 100%; height: 100%; color: #fff; font-size: 1rem; font-weight: bold; text-align: center; }
+
+.menu-modal ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+#mainContainer { position: relative; top: 0; left: 0; overflow-x: hidden; perspective: 2000px; }
+
+#mainContainer div { position: absolute; top: 50%; left: 50%; color: #fff; font-weight: bold; text-transform: uppercase; text-align: left; transform-style: preserve-3d; animation: main-animation 7s infinite ease alternate; }
+
+#mainContainer div p:last-of-type { font-weight: normal; text-transform: capitalize; animation: main-animation-2 9s infinite ease; }
+
+#mainContainer div span { font-weight: normal; text-transform: none; }
+
+#mainContainer div em { display: block; }
+
+#mainContainer div em:first-of-type { text-transform: capitalize; animation: t-z 8s infinite ease alternate; }
+
+#mainContainer div em:last-of-type { animation: t-z 6s infinite ease alternate-reverse; }
+
+#mainContainer div:hover { transform: translate(-50%, -50%); animation-play-state: paused; }
+
+#mainContainer div:hover em, #mainContainer div:hover p { animation-play-state: paused; }
+
+#mainContainer a { display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; left: 50%; transform: translateX(-50%); color: #fff; text-transform: capitalize; animation: bounce 1s linear infinite alternate; }
+
+#mainContainer a em { display: block; }
+
+#mainContainer a i { transform: rotate(90deg); line-height: 0.5rem; }
+
+#aboutTitle div { text-align: left; }
+
+#aboutTitle div:first-of-type { font-weight: bold; }
+
+#aboutTitle div strong { text-transform: capitalize; }
+
+#aboutTitle div span { font-weight: bold; }
+
+#aboutTitle > button { display: none; position: fixed; z-index: 2000; bottom: 2.5rem; right: 2.5rem; width: 48px; height: 48px; box-sizing: content-box; background-color: #060606; border-radius: 0.5rem; color: #fff; text-align: center; text-transform: uppercase; line-height: 2.5rem; }
+
+#aboutTitle > button:hover, #aboutTitle > button:focus { animation: bounce .5s ease infinite alternate; }
+
+#aboutContainer { display: flex; flex-direction: row; justify-content: center; align-items: center; }
+
+.about-content { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+
+.skill-box { display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+
+.skill-box h3 { width: 100%; text-align: left; }
+
+.skill-box ul { display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; overflow: hidden; flex-flow: row wrap; }
+
+.skill-box ul li { background-color: #060606; color: #fff; font-weight: 600; text-align: center; transition: all .5s ease; }
+
+.skill-box.skill-act li:nth-of-type(0) { transition-delay: 0s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(1) { transition-delay: 0.1s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(2) { transition-delay: 0.2s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(3) { transition-delay: 0.3s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(4) { transition-delay: 0.4s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(5) { transition-delay: 0.5s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(6) { transition-delay: 0.6s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(7) { transition-delay: 0.7s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(8) { transition-delay: 0.8s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(9) { transition-delay: 0.9s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(10) { transition-delay: 1s; left: 0; }
+
+.skill-box.skill-act li:nth-of-type(11) { transition-delay: 1.1s; left: 0; }
+
+.history-box { display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+
+.history-box h3 { width: 100%; text-align: left; }
+
+.history-box ul { display: flex; flex-direction: column; justify-content: space-between; align-items: center; overflow: hidden; }
+
+.history-box ul li { background-color: #e0e0e0; color: #060606; transition: all .5s ease; }
+
+.history-box ul li dl { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 100%; height: 100%; }
+
+.history-box ul li dl dt { font-weight: bold; text-align: left; }
+
+.history-box.history-act li:nth-of-type(0) { transition-delay: 0s; right: 0; }
+
+.history-box.history-act li:nth-of-type(1) { transition-delay: 0.2s; right: 0; }
+
+.history-box.history-act li:nth-of-type(2) { transition-delay: 0.4s; right: 0; }
+
+.history-box.history-act li:nth-of-type(3) { transition-delay: 0.6s; right: 0; }
+
+.history-box.history-act li:nth-of-type(4) { transition-delay: 0.8s; right: 0; }
+
+.history-box.history-act li:nth-of-type(5) { transition-delay: 1s; right: 0; }
+
+#workTitle p { margin: auto; font-weight: 600; text-align: left; }
+
+.work-link { margin: auto; }
+
+.work-link dl { font-weight: bold; text-align: right; text-transform: capitalize; }
+
+.work-link dl dd a { display: block; width: 100%; height: 100%; }
+
+.work-link dl dd a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
+#workContainer { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+#workContainer ul { position: absolute; width: 100%; height: 100%; }
+
+#workContainer ul li { display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+#workContainer ul li:nth-of-type(1) > div:first-of-type { background-image: url("../img/project/project_01.jpg"); }
+
+#workContainer ul li:nth-of-type(2) > div:first-of-type { background-image: url("../img/project/project_02.jpg"); }
+
+#workContainer ul li:nth-of-type(3) > div:first-of-type { background-image: url("../img/project/project_03.jpg"); }
+
+#workContainer ul li div:first-of-type { float: left; background-position: 50% 50%; background-size: 480%; background-repeat: no-repeat; transition: all 1s ease; }
+
+#workContainer ul li div:first-of-type:hover { background-size: 100%; }
+
+#workContainer ul li > div:last-of-type { float: right; box-sizing: border-box; background-color: #e0e0e0; }
+
+#workContainer ul li > div:last-of-type a { width: 36px; height: 36px; border-radius: 100%; background-color: #fff; }
+
+#workContainer ul li > div:last-of-type a i { margin: auto; color: #060606; font-weight: bold; font-size: 0.875rem; line-height: 36px; }
+
+#workContainer ul li > div:last-of-type a { display: flex; }
+
+#workContainer.click-active { display: block; height: 300%; }
+
+#workContainer.click-active .work-list-box { height: 240%; }
+
+#workContainer.click-active .work-list-box ul { height: 100%; }
+
+#workContainer.click-active .work-list-box ul li { height: 33.33333%; }
+
+.work-list-box { position: relative; overflow: hidden; }
+
+.port-btn { display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; flex-flow: row wrap; position: absolute; }
+
+.port-btn button { width: 36px; height: 36px; border-radius: 100%; background-color: #e0e0e0; }
+
+.port-btn button i { margin: auto; color: #060606; font-weight: bold; font-size: 0.875rem; line-height: 36px; }
+
+.port-btn button:first-of-type { transform: rotate(180deg); }
+
+.port-text strong { font-weight: bold; }
+
+.port-text em { display: block; font-weight: 600; }
+
+.port-text div { display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-weight: bold; text-transform: uppercase; }
+
+#workContainer .work-list-modal { display: none; position: fixed; z-index: 1000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; background-color: rgba(6, 6, 6, 0.8); }
+
+#workContainer .work-list-modal .close-btn { display: block; position: absolute; z-index: 2000; top: 1.5rem; right: 2.5rem; width: 28px; height: 28px; background-color: #fff; }
+
+#workContainer .work-list-modal .close-btn span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 24px; height: 2.5px; background-color: #060606; }
+
+#workContainer .work-list-modal .close-btn span:first-of-type { transform: translate(-50%, -50%) rotate(45deg); }
+
+#workContainer .work-list-modal .close-btn span:last-of-type { transform: translate(-50%, -50%) rotate(-45deg); }
+
+#workContainer .work-list-modal .work-list-box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); border-radius: 1rem; background-color: #fff; transition: all 1.2s ease; }
+
+#workContainer .work-list-modal .work-list-box ul { overflow-y: hidden; overflow-y: scroll; }
+
+#workContainer .work-list-modal .work-list-box ul li { display: block; position: static; }
+
+#workContainer .work-list-modal .work-list-box .port-btn { display: none; }
+
+#workContainer .work-list-modal .work-list-box .port-text { text-align: left; }
+
+#workContainer .work-list-modal.modal-active .work-list-box { transform: translate(-50%, -50%) scale(1); }
+
+#footBox { display: flex; flex-direction: column; justify-content: space-between; align-items: center; color: #fff; }
+
+#footBox a { color: #fff; font-weight: 600; text-align: center; }
+
+#footBox div { text-align: center; }
+
+@media screen and (min-width: 1920px) { h2 { font-size: 3.25rem; }
+  h3 { font-size: 2rem; }
+  #headBox { height: 122px; }
+  #headBox nav { width: 1258px; height: 58px; }
+  #headBox nav h1 { width: 58px; }
+  #headBox nav ul { width: 300px; }
+  #headBox nav ul li { width: 58px; line-height: 3.5rem; }
+  #headBox nav ul li:last-of-type { display: none; }
+  #mainContainer p:first-of-type { font-size: 2.25rem; }
+  #mainContainer p:first-of-type em:first-of-type { margin-bottom: 0.75rem; }
+  #mainContainer p:first-of-type em:last-of-type { margin-bottom: 0.75rem; font-size: 3.75rem; line-height: 3.75rem; }
+  #mainContainer a { bottom: 2.5rem; }
+  #mainContainer a em { margin-bottom: 0.5rem; }
+  #aboutTitle { padding-top: 14rem; }
+  .about-text { margin: 7rem auto 0; width: 480px; height: 310px; font-size: 1.25rem; }
+  .about-text div:first-of-type { margin-bottom: 4rem; line-height: 2rem; }
+  .about-text div:last-of-type { line-height: 2.25rem; }
+  .about-text span { font-size: 1.75rem; }
+  .about-content { width: 1258px; }
+  .about-content div { width: 540px; height: 554px; }
+  .skill-box ul { margin-bottom: 2.75rem; width: 100%; height: 400px; }
+  .skill-box ul li { position: relative; left: -100%; margin: 0 1.25rem 1.25rem 0; width: 120px; height: 120px; font-size: 0.875rem; line-height: 7.5rem; }
+  .skill-box ul li:nth-child(4n) { margin: 0; }
+  .history-box ul { width: 100%; height: 446px; }
+  .history-box ul li { position: relative; right: -100%; width: 100%; height: 76px; }
+  .history-box ul li dl dt { margin: 0 3rem 0 4rem; width: 140px; font-size: 0.875rem; }
+  .history-box ul li dl dd { font-size: 0.75rem; }
+  #workTitle { padding-top: 14rem; }
+  #workTitle h2 { margin-bottom: 1.5rem; }
+  #workTitle p { width: 232px; line-height: 1.5rem; }
+  .work-link { width: 940px; }
+  .work-link dl { margin-top: 14.75rem; width: 100%; }
+  .work-link dl dt { font-size: 1.25rem; margin-bottom: 1.75rem; }
+  .work-link dl dd a:first-of-type { margin-bottom: 1rem; }
+  #workContainer h3 { margin-bottom: 2.5rem; width: 1258px; }
+  #workContainer > button { overflow: hidden; width: 280px; height: 48px; border-radius: 8px; background-color: #060606; color: #fff; font-weight: normal; font-size: 1.25rem; text-align: center; text-transform: uppercase; line-height: 48px; }
+  #workContainer > .work-list-box { margin-bottom: 5.375rem; width: 1258px; height: 440px; }
+  #workContainer .work-list-modal .work-list-box { padding: 4rem; width: 1258px; height: 80%; }
+  #workContainer .work-list-modal .work-list-box ul { width: 1258px; height: 720px; }
+  #workContainer .work-list-modal .work-list-box ul li { margin: auto; padding: 0 8rem; box-sizing: border-box; height: 320px; margin: 2rem 0; }
+  #workContainer .work-list-modal .work-list-box .port-img { width: 500px; height: 320px; }
+  #workContainer .work-list-modal .work-list-box .port-text { padding: 2.75rem 2rem; width: 480px; height: 320px; background-color: #fff; }
+  #workContainer .work-list-modal .work-list-box .port-text a { background-color: #e0e0e0; }
+  .port-btn { right: 2.25rem; bottom: 2.25rem; width: 88px; height: 0; }
+  .port-img { width: 620px; height: 440px; }
+  .port-text { padding: 3.875rem 0 0 4.125rem; width: 560px; height: 320px; }
+  .port-text p { margin-bottom: 3rem; }
+  .port-text p strong { font-size: 1.5rem; }
+  .port-text div { width: 144px; height: 36px; line-height: 2.25rem; }
+  #footBox { padding: 14rem 0 6.125rem; }
+  .my-contact { width: 240px; }
+  .my-contact ul { width: 100%; height: 100%; }
+  .my-contact ul li { width: 100%; }
+  .my-contact ul li a { display: block; width: 100%; height: 100%; font-size: 1.25rem; }
+  .my-contact ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+  .my-contact ul li a:first-of-type { margin-bottom: 1.75rem; }
+  .copy-right { font-size: 0.75rem; line-height: 1.5rem; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1919px) { h2 { font-size: 3rem; }
+  h3 { font-size: 1.75rem; }
+  #headBox { height: 122px; }
+  #headBox nav { width: 1100px; height: 58px; }
+  #headBox nav h1 { width: 58px; }
+  #headBox nav ul { width: 300px; }
+  #headBox nav ul li { width: 58px; line-height: 3.5rem; }
+  #headBox nav ul li:last-of-type { display: none; }
+  #mainContainer p:first-of-type { font-size: 2.25rem; }
+  #mainContainer p:first-of-type em:first-of-type { margin-bottom: 0.75rem; }
+  #mainContainer p:first-of-type em:last-of-type { margin-bottom: 0.75rem; font-size: 3.75rem; line-height: 3.75rem; }
+  #mainContainer a { bottom: 2.5rem; }
+  #mainContainer a em { margin-bottom: 0.5rem; }
+  #aboutTitle { padding-top: 11.25rem; }
+  .about-text { margin: 5rem auto 0; width: 390px; height: 310px; }
+  .about-text div:first-of-type { margin-bottom: 4rem; line-height: 2rem; }
+  .about-text div:last-of-type { line-height: 2rem; }
+  .about-text span { font-size: 1.5rem; }
+  .about-content { width: 1100px; }
+  .about-content div { height: 554px; }
+  .skill-box { width: 528px; }
+  .skill-box ul { margin-bottom: 2.75rem; width: 100%; height: 400px; }
+  .skill-box ul li { position: relative; left: -100%; margin: 0 1rem 1rem 0; width: 120px; height: 120px; font-size: 0.875rem; line-height: 7.5rem; }
+  .skill-box ul li:nth-child(4n) { margin: 0; }
+  .history-box { width: 480px; }
+  .history-box ul { width: 100%; height: 446px; }
+  .history-box ul li { position: relative; right: -100%; width: 100%; height: 76px; }
+  .history-box ul li dl dt { margin: 0 3rem 0 4rem; width: 140px; font-size: 0.875rem; }
+  .history-box ul li dl dd { font-size: 0.75rem; }
+  #workTitle { padding-top: 11.25rem; }
+  #workTitle h2 { margin-bottom: 1.5rem; }
+  #workTitle p { width: 232px; line-height: 1.5rem; }
+  .work-link { width: 940px; }
+  .work-link dl { margin-top: 14.75rem; width: 100%; }
+  .work-link dl dt { font-size: 1.25rem; margin-bottom: 1.75rem; }
+  .work-link dl dd a:first-of-type { margin-bottom: 1rem; }
+  #workContainer h3 { margin-bottom: 2.5rem; width: 1100px; }
+  #workContainer > button { overflow: hidden; width: 280px; height: 48px; border-radius: 8px; background-color: #060606; color: #fff; font-weight: normal; font-size: 1.25rem; text-align: center; text-transform: uppercase; line-height: 48px; }
+  #workContainer > .work-list-box { margin-bottom: 5.375rem; width: 1100px; height: 400px; }
+  #workContainer .work-list-modal .work-list-box { padding: 4rem; width: 1100px; height: 80%; }
+  #workContainer .work-list-modal .work-list-box ul { width: 1100px; height: 640px; }
+  #workContainer .work-list-modal .work-list-box ul li { margin: auto; padding: 0 6rem; box-sizing: border-box; height: 280px; margin: 2rem 0; }
+  #workContainer .work-list-modal .work-list-box .port-img { width: 440px; height: 280px; }
+  #workContainer .work-list-modal .work-list-box .port-text { padding: 1.5rem 1.25rem; width: 440px; height: 280px; background-color: #fff; }
+  #workContainer .work-list-modal .work-list-box .port-text p { margin-bottom: 1.75rem; }
+  #workContainer .work-list-modal .work-list-box .port-text a { background-color: #e0e0e0; }
+  #workContainer .work-list-modal .work-list-box .close-btn { right: 1.5rem; }
+  .port-btn { right: 2rem; bottom: 2.25rem; width: 88px; height: 0; }
+  .port-img { width: 560px; height: 400px; }
+  .port-text { padding: 2.5rem 0 0 2rem; width: 480px; height: 320px; }
+  .port-text p { margin-bottom: 3rem; }
+  .port-text p strong { font-size: 1.5rem; }
+  .port-text div { width: 144px; height: 36px; line-height: 2.25rem; }
+  #footBox { padding: 11.25rem 0 6.125rem; }
+  .my-contact { width: 240px; }
+  .my-contact ul { width: 100%; height: 100%; }
+  .my-contact ul li { width: 100%; }
+  .my-contact ul li a { display: block; width: 100%; height: 100%; font-size: 1.25rem; }
+  .my-contact ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+  .my-contact ul li a:first-of-type { margin-bottom: 1.75rem; }
+  .copy-right { font-size: 0.75rem; line-height: 1.5rem; } }
+
+@media screen and (min-width: 768px) and (max-width: 1279px) { h2 { font-size: 3rem; }
+  h3 { font-size: 1.75rem; }
+  #headBox { height: 80px; }
+  #headBox nav { width: 700px; height: 48px; }
+  #headBox nav h1 { width: 48px; height: 48px; }
+  #headBox nav ul { width: 48px; }
+  #headBox nav ul li { width: 48px; height: 48px; line-height: 3rem; }
+  #headBox nav ul li:not(:last-of-type) { display: none; }
+  #headBox .menu-modal li:nth-of-type(2) { margin: 3rem 0; }
+  #headBox .menu-modal a { font-size: 1.25rem; }
+  #mainContainer p:first-of-type { font-size: 2.25rem; }
+  #mainContainer p:first-of-type em:first-of-type { margin-bottom: 0.75rem; }
+  #mainContainer p:first-of-type em:last-of-type { margin-bottom: 0.75rem; font-size: 3.75rem; line-height: 3.75rem; }
+  #mainContainer a { display: none; animation: none; bottom: 2.5rem; }
+  #mainContainer a em { margin-bottom: 0.5rem; }
+  #aboutTitle { padding-top: 11.25rem; }
+  .about-text { margin: 5rem auto 0; width: 390px; height: 310px; }
+  .about-text div:first-of-type { margin-bottom: 4rem; line-height: 2rem; }
+  .about-text div:last-of-type { line-height: 2rem; }
+  .about-text span { font-size: 1.5rem; }
+  #aboutContainer { height: 1400px; }
+  .about-content { display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 700px; }
+  .about-content div { height: 554px; }
+  .about-content h3 { width: 580px; }
+  .skill-box { margin-bottom: 5rem; width: 528px; }
+  .skill-box ul { margin-bottom: 2.75rem; width: 100%; height: 400px; }
+  .skill-box ul li { margin: 0 1rem 1rem 0; width: 120px; height: 120px; font-size: 0.875rem; line-height: 7.5rem; }
+  .skill-box ul li:nth-child(4n) { margin: 0; }
+  .history-box { width: 480px; }
+  .history-box ul { width: 100%; height: 446px; }
+  .history-box ul li { width: 100%; height: 76px; }
+  .history-box ul li dl dt { margin: 0 3rem 0 4rem; width: 140px; font-size: 0.875rem; }
+  .history-box ul li dl dd { font-size: 0.75rem; }
+  #workTitle { padding-top: 11.25rem; }
+  #workTitle h2 { margin-bottom: 1.5rem; }
+  #workTitle p { width: 232px; line-height: 1.5rem; }
+  .work-link { position: absolute; left: 50%; transform: translateX(-50%); bottom: 4rem; width: 580px; }
+  .work-link dl { width: 100%; }
+  .work-link dl dt { font-size: 1.25rem; margin-bottom: 1rem; }
+  .work-link dl dd a:first-of-type { margin-bottom: 1rem; }
+  #workContainer { min-height: 1024px; }
+  #workContainer h3 { margin-top: 1.5rem; margin-bottom: 2.75rem; width: 580px; }
+  #workContainer > button { overflow: hidden; width: 280px; height: 48px; border-radius: 8px; background-color: #060606; color: #fff; font-weight: normal; font-size: 1.25rem; text-align: center; text-transform: uppercase; line-height: 48px; }
+  #workContainer ul li { flex-direction: column; justify-content: start; }
+  .work-list-box { margin-bottom: 5rem; width: 580px; height: 714px; }
+  #workContainer .work-list-modal .work-list-box { width: 580px; height: 80%; }
+  #workContainer .work-list-modal .work-list-box ul { padding-top: 3.5rem; box-sizing: border-box; width: 580px; height: 100%; }
+  #workContainer .work-list-modal .work-list-box ul li { margin: auto; height: 280px; margin: 2rem 0; }
+  #workContainer .work-list-modal .work-list-box ul li:first-of-type { margin-top: 0; }
+  #workContainer .work-list-modal .work-list-box .port-img { width: 580px; height: 280px; }
+  #workContainer .work-list-modal .work-list-box .port-text { padding: 1rem 1rem; width: 580px; height: 280px; background-color: #fff; }
+  #workContainer .work-list-modal .work-list-box .port-text p { margin-bottom: 1.75rem; }
+  #workContainer .work-list-modal .work-list-box .port-text a { background-color: #e0e0e0; }
+  #workContainer .work-list-modal .work-list-box .close-btn { top: 1rem; right: 1rem; border-radius: .5rem; }
+  #workContainer .work-list-modal .work-list-box .close-btn span { width: 20px; }
+  .port-btn { right: 2rem; bottom: 2.25rem; width: 88px; height: 0; }
+  .port-img { width: 100%; height: 410px; margin-bottom: 1rem; }
+  .port-text { padding: 1rem 0 0 3rem; width: 100%; height: 228px; }
+  .port-text p { margin-bottom: 1rem; }
+  .port-text p strong { font-size: 1.5rem; }
+  .port-text div { width: 144px; height: 36px; line-height: 2.25rem; }
+  #footBox { padding: 11.25rem 0 6.125rem; }
+  .my-contact { width: 240px; }
+  .my-contact ul { width: 100%; height: 100%; }
+  .my-contact ul li { width: 100%; }
+  .my-contact ul li a { display: block; width: 100%; height: 100%; }
+  .my-contact ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+  .my-contact ul li a:first-of-type { margin-bottom: 1.75rem; }
+  .copy-right { font-size: 0.75rem; line-height: 1.5rem; } }
+
+@media screen and (max-width: 767px) { h2 { font-size: 2.5rem; }
+  h3 { font-size: 1.5rem; }
+  #headBox { height: 64px; }
+  #headBox nav { width: 356px; height: 40px; }
+  #headBox nav h1 { width: 40px; height: 40px; }
+  #headBox nav ul { width: 40px; }
+  #headBox nav ul li { width: 40px; height: 40px; line-height: 2.5rem; }
+  #headBox nav ul li:not(:last-of-type) { display: none; }
+  #mainContainer div { transform: translate(-50%, -50%); }
+  #mainContainer p:first-of-type { font-size: 1.25rem; }
+  #mainContainer p:first-of-type em:first-of-type { margin-bottom: 0.75rem; }
+  #mainContainer p:first-of-type em:last-of-type { margin-bottom: 0.75rem; font-size: 2.5rem; line-height: 3.75rem; }
+  #mainContainer a { display: none; bottom: 1.25rem; animation: none; }
+  #mainContainer a em { margin-bottom: 0.5rem; }
+  #mainContainer p:last-of-type { font-size: 0.625rem; }
+  #aboutTitle { padding-top: 5rem; }
+  .about-text { margin: 5rem auto 0; width: 336px; height: 310px; font-size: 0.875rem; }
+  .about-text div:first-of-type { margin-bottom: 4rem; line-height: 2rem; }
+  .about-text div:last-of-type { line-height: 2rem; }
+  .about-text span { font-size: 1.25rem; }
+  #aboutContainer { height: 1200px; }
+  .about-content { display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 356px; }
+  .about-content h3 { width: 356px; }
+  .skill-box { margin-bottom: 3.5rem; width: 356px; height: 552px; }
+  .skill-box ul { width: 100%; height: 480px; }
+  .skill-box ul li { margin: 0 1rem 1rem 0; width: 108px; height: 108px; font-size: 0.75rem; line-height: 6.75rem; }
+  .skill-box ul li:nth-child(3n) { margin: 0; }
+  .history-box { width: 356px; height: 518px; }
+  .history-box ul { width: 100%; height: 446px; }
+  .history-box ul li { width: 100%; height: 76px; }
+  .history-box ul li dl dt { margin: 0 3.5rem 0 1.25rem; width: 80px; font-size: 0.875rem; }
+  .history-box ul li dl dd { font-size: 0.75rem; }
+  #workTitle { padding-top: 5rem; }
+  #workTitle h2 { margin-bottom: 1.5rem; }
+  #workTitle p { width: 182px; line-height: 1.5rem; }
+  .work-link { position: absolute; left: 50%; transform: translateX(-50%); bottom: 2rem; width: 332px; }
+  .work-link dl { width: 100%; }
+  .work-link dl dt { font-size: 1.25rem; margin-bottom: 1rem; }
+  .work-link dl dd a:first-of-type { margin-bottom: .75rem; }
+  #workContainer { min-height: 640px; }
+  #workContainer h3 { margin-bottom: 1rem; width: 356px; }
+  #workContainer > button { overflow: hidden; width: 200px; height: 40px; border-radius: 6px; background-color: #060606; color: #fff; font-weight: normal; font-size: 0.875rem; text-align: center; text-transform: uppercase; line-height: 40px; }
+  #workContainer ul li { flex-direction: column; justify-content: start; }
+  #workContainer ul li div:last-of-type a { width: 32px; height: 32px; border-radius: 100%; background-color: #fff; }
+  #workContainer ul li div:last-of-type a i { margin: auto; color: #060606; font-weight: bold; font-size: 0.875rem; line-height: 32px; }
+  .work-list-box { margin-bottom: 2.5rem; width: 356px; height: 456px; }
+  #workContainer .work-list-modal .work-list-box { width: 356px; height: 90%; }
+  #workContainer .work-list-modal .work-list-box ul { padding-top: 3.5rem; box-sizing: border-box; width: 356px; height: 100%; }
+  #workContainer .work-list-modal .work-list-box ul li { margin: auto; height: 148px; margin: 2rem 0; }
+  #workContainer .work-list-modal .work-list-box ul li:first-of-type { margin-top: 0; }
+  #workContainer .work-list-modal .work-list-box .port-img { width: 356px; height: 160px; }
+  #workContainer .work-list-modal .work-list-box .port-text { padding: .5rem .5rem; width: 356px; height: 160px; background-color: #fff; }
+  #workContainer .work-list-modal .work-list-box .port-text p { margin-bottom: 1rem; }
+  #workContainer .work-list-modal .work-list-box .port-text a { background-color: #e0e0e0; }
+  #workContainer .work-list-modal .work-list-box .close-btn { top: 1rem; right: 1rem; border-radius: .5rem; }
+  #workContainer .work-list-modal .work-list-box .close-btn span { width: 16px; height: 2.2px; }
+  .port-btn { right: 1.5rem; bottom: 2rem; width: 80px; height: 0; }
+  .port-btn button { width: 32px; height: 32px; border-radius: 100%; background-color: #e0e0e0; }
+  .port-btn button i { margin: auto; color: #060606; font-weight: bold; font-size: 0.875rem; line-height: 32px; }
+  .port-img { width: 100%; height: 252px; margin-bottom: 0.75rem; }
+  .port-text { padding: 1rem 0 0 1rem; width: 100%; height: 148px; }
+  .port-text p { font-size: 0.75rem; margin-bottom: .75em; }
+  .port-text p strong { display: inline-block; margin-bottom: .5rem; font-size: 1rem; }
+  .port-text p em { display: inline-block; font-size: 0.75rem; }
+  .port-text div { width: 112px; height: 32px; font-size: 0.75rem; line-height: 2.25rem; }
+  #footBox { padding: 5rem 0 4rem; }
+  .my-contact { width: 240px; }
+  .my-contact ul { width: 100%; height: 100%; }
+  .my-contact ul li { width: 100%; }
+  .my-contact ul li a { display: block; width: 100%; height: 100%; }
+  .my-contact ul li a > span { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+  .my-contact ul li a:first-of-type { margin-bottom: 1.75rem; }
+  .copy-right { font-size: 0.75rem; line-height: 1.5rem; } }

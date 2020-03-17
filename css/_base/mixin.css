@@ -1,0 +1,12 @@
+@keyframes main-animation { 0% { top: 52%;
+    transform: translate(-50%, -50%) scale(1) rotateX(-15deg) rotateY(-30deg); }
+  100% { top: 48%;
+    transform: translate(-50%, -50%) scale(1.4) rotateX(30deg) rotateY(15deg); } }
+
+@keyframes t-z { 0% { transform: translateZ(-100px) rotate(15deg); }
+  100% { transform: translateZ(100px) rotate(-15deg); } }
+
+@keyframes main-animation-2 { 0% { transform: rotateX(0); }
+  100% { transform: rotateX(1turn); } }
+
+@keyframes bounce { 100% { bottom: 2rem; } }

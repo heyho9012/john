@@ -1,117 +1,304 @@
 @mixin mobile {
     @media screen and (max-width:767px) {
         @content;
-        article,footer{min-height:640px;}
-        #headBox{height:90px;padding-top:1.5rem;}
-        nav{width:100%;height:58px;padding:0 0.75rem;box-sizing:border-box;
-            h1{width:48px;height:48px;margin-top:5px;}
-            ul{width:auto;
-                li{margin-right:1rem;width:58px;height:58px;line-height:3.4375rem;font-size:0.625rem;
-        }}}
 
-//------------------------------------------------------------------------------
-        #mainBox{
-            ul{width:380px;height:200px;
-                li{width:380px;height:120px; &:last-child{h2{font-size:5rem;}}}
-                h2{font-size:5.5rem;}
-                h2:after,h2::after{content:"";display:block;bottom:-0.625rem;width:350px;height:12px;left:50%;transform:translateX(-50%);}
-            }
-            p{top:66%;left:50%;transform:translate(-50%,-50%);width:380px;height:30px;font-size:0.75rem;}
-            div{left:0;right:0;bottom:1.75rem;width:50px;height:34px;
-                a{font-size:1rem;line-height:2.125rem;}
-            }
-            @keyframes bounce {100%{bottom:44px;}}
+        //------------------------------------------------------------------------------
+        h2 {
+            font-size: 2.5rem;
+        }
+        h3 {
+            font-size: 1.5rem;
         }
 
-//------------------------------------------------------------------------------
-        #aboutBox{
-            h2{top:7.5rem;right:5.625rem;font-size:5.5rem;width:380px;height:120px;opacity:0;}
-            h2:after,h2::after{content:"";display:block;bottom:10px;width:360px;height:16px;}
-        }
-            .about_text{top:25rem;transform:translateY(-50%);left:5.625rem;width:320px;height:128px;line-height:1.75rem;opacity:0;font-size:12px;text-align:center;
-                span{font-size:0.875rem;display:inline-table;z-index:100;}
-                span::before{content:"";display:block;z-index:-1;top:0;left:0;}
+        //------------------------------------------------------------------------------
+        #headBox {
+            height: 64px;
+            nav {
+                width: 356px;
+                height: 40px;
+                h1 {
+                    width: 40px;
+                    height: 40px;
+                }
+                ul {
+                    width: 40px;
+                    li {
+                        &:not(:last-of-type) {
+                            display: none;
+                        }
+                        width: 40px;
+                        height: 40px;
+                        line-height: 2.5rem;
+                    }
+                }
             }
-            #aboutBox h2.action,.about_text.action{left:0;right:0;margin:auto;opacity:1;}
-            .fix_menu{right:1rem; ul>li{width:60px; a{font-size:0.75rem;}}}
-            .fix_menu.real_fix{right:1rem;}
-            
-//------------------------------------------------------------------------------
-        #aboutCon{padding-top:1.75rem;}
-        .about_list{width:360px;height:660px;margin:auto;
-            >ul{
-                >li{width:40%;height:auto; &:nth-of-type(2){width:360px;dt{text-align:center;p{text-align:center;}} dd{height:338px;}}
-                    &:last-child{width:60%;float:right;}
-                    & dt{margin-bottom:1rem;}
-                    dl{height:auto;
-                        dt{height:60px;font-size:3rem;text-align:left; p{font-size:0.625rem;color:#777;line-height:0;text-align:left;}}
-                        dd{height:auto;font-size:0.625rem;line-height:1.125rem;text-align:left; span{font-size:0.625rem;}}
-        }}}}
-        .history{position:absolute;top:220px;left:50%;transform:translateX(-50%);
-            div{top:-100%;left:50%;transform:traslateX(-50%);width:1px;height:500px;}
-            ul{
-                li{width:100%;height:44px;font-size:10px;line-height:0;margin-bottom:10px;
-                    &:nth-child(2n){text-align:right;span{margin-right:273px;margin-left:0;}p{margin-left:-50%;}}
-                    p{width:42%;margin-right:-50%;line-height:1.25rem;}
-            }}}
-        
-//------------------------------------------------------------------------------
-        #aboutCon_02{padding-top:1.75rem;
-            h2{height:auto;font-size:5.5rem;margin-bottom:2.25rem; p{font-size:0.625rem;line-height:0;} }
-            dl{height:140px;&:first-of-type{height:220px;margin-bottom:2rem;}
-                dt{height:32px;margin-bottom:1rem;font-size:1rem;}
-                dd{height:auto;
-                    ul{height:100%;
-                        li{width:300px;height:auto;margin-bottom:.5rem; p{float:left;text-align:left;width:80px;font-size:0.75rem;}}
-        }}}}
-        .my_can{display:none;}
-        .my_can+em{float:right;font-size:0.75rem;span{font-size:0.75rem;}}
-        .pub{width:300px;margin:auto;margin-bottom:3rem;}
-        .des{width:300px;margin:auto;}
-
-//------------------------------------------------------------------------------
-        #workBox{
-            h2{top:456px;font-size:5rem;width:420px;height:120px;opacity:0;}
-            h2:after,h2::after{content:"";display:block;bottom:10px;width:440px;height:16px;}
-            dl{right:50px;bottom:5rem;width:300px;height:108px;text-align: right;
-                dt{height:28px;font-size:1rem;margin-bottom:1rem;}
-                dd{height:64px;padding-left:12.125rem;
-                    a{display:block;width:74px;height:28px;margin-bottom:0.25rem;font-size:1rem;text-align:right;}
-                    a:last-child{width:60px;margin-bottom:0;}
-        }}}
-
-//------------------------------------------------------------------------------
-        #workCon{min-height:1280px;height:300%;
-            >ul{min-height:1280px;
-                >li{min-height:640px;height:33.333333%;
-                    &:last-child{margin-right:0;}
-                    >dl{padding-top:1.75rem;
-                        >dt{height:10%;font-size:3rem;margin-bottom:3.75rem;}
-                        >dd{width:360px;height:60%;}
-        }}}}
-        .project_img{width:360px;height:240px;
-            &:hover{background-size:108%;}
         }
-        .project_text{width:100%;height:auto;
-            dl{
-                dt{width:360px;height:auto;font-size:1.5rem;line-height:1.5rem;padding-left:0.625rem;padding-top:1rem; span{font-size:1rem;line-height:0;}}
-                dd{width:360px;height:auto;padding-left:0.625rem;padding-top:1rem;
-                    p{font-size:12px;}
-                    a{@include link(162px,42px);line-height:42px;font-size:1rem;margin-top:1.5rem;
-                        &:hover{border:2px solid #1d1d1d;line-height:38px;}
-        }}}}
 
-//------------------------------------------------------------------------------
-        #footBox{
-            ul{width:290px;height:100px;
-                li{height:40px;margin-bottom:0.625rem;
-                    &:last-child{margin-bottom:0;}
-                    a{font-size:1rem;line-height:2.5rem;
-                        &::before{content:"";bottom:0;height:1.2px;opacity:0;}
-        }}}}
-            .timer{bottom:120px;width:204px;height:50px;line-height:3.125rem;font-size:1.5rem;}
-            .copy{bottom:54px;width:516px;height:52px;font-size:0.625rem;line-height:1.25rem;}
+        //------------------------------------------------------------------------------
+        #mainContainer {
+            div {
+                transform: translate(-50%, -50%);
+            }
+            p:first-of-type {
+                font-size: 1.25rem;
+                em:first-of-type {
+                    margin-bottom: 0.75rem;
+                }
+                em:last-of-type {
+                    margin-bottom: 0.75rem;
+                    font-size: 2.5rem;
+                    line-height: 3.75rem;
+                }
+            }
+            a {
+                display: none;
+                bottom: 1.25rem;
+                animation: none;
+                em {
+                    margin-bottom: 0.5rem;
+                }
+            }
+            p:last-of-type {
+                font-size: 0.625rem;
+            }
+        }
+        //------------------------------------------------------------------------------
+        #aboutTitle {
+            padding-top: 5rem;
+        }
+        .about-text {
+            margin: 5rem auto 0;
+            width: 336px;
+            height: 310px;
+            font-size: 0.875rem;
+            div:first-of-type {
+                margin-bottom: 4rem;
+                line-height: 2rem;
+            }
+            div:last-of-type {
+                line-height: 2rem;
+            }
+            span {
+                font-size: 1.25rem;
+            }
+        }
 
-//------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------
+        #aboutContainer {
+            height: 1200px;
+        }
+        .about-content {
+            @include flex ($jc: space-between, $fd: column);
+            width: 356px;
+            h3 {
+                width: 356px;
+            }
+        }
+        .skill-box {
+            margin-bottom: 3.5rem;
+            width: 356px;
+            height: 552px;
+            ul {
+                width: 100%;
+                height: 480px;
+                li {
+                    margin: 0 1rem 1rem 0;
+                    width: 108px;
+                    height: 108px;
+                    font-size: 0.75rem;
+                    line-height: 6.75rem;
+                    &:nth-child(3n) {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .history-box {
+            width: 356px;
+            height: 518px;
+            ul {
+                width: 100%;
+                height: 446px;
+                li {
+                    width: 100%;
+                    height: 76px;
+                    dl {
+                        dt {
+                            margin: 0 3.5rem 0 1.25rem;
+                            width: 80px;
+                            font-size: 0.875rem;
+                        }
+                        dd {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+        //------------------------------------------------------------------------------
+        #workTitle {
+            padding-top: 5rem;
+            h2 {
+                margin-bottom: 1.5rem;
+            }
+            p {
+                width: 182px;
+                line-height: 1.5rem;
+            }
+        }
+        .work-link {
+            position: absolute;
+            left: 50%;            
+            transform: translateX(-50%);
+            bottom: 2rem;
+            width: 332px;
+            dl {
+                width: 100%;
+                dt {
+                    font-size: 1.25rem;
+                    margin-bottom: 1rem;
+                }
+                dd {
+                    a:first-of-type {
+                        margin-bottom: .75rem;
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------------------
+        #workContainer {
+            min-height: 640px;
+            h3 {
+                margin-bottom: 1rem;
+                width: 356px;
+            }
+            @include all-btn(200px,40px,0.875rem,6px);
+            ul {
+                li {
+                    flex-direction: column;
+                    justify-content: start;
+                    div:last-of-type {
+                        @include port-btn($selector: a, $wh: 32px, $c: #fff);
+                    }
+                }
+            }
+        }
+        .work-list-box {
+            margin-bottom: 2.5rem;
+            width: 356px;
+            height: 456px;
+        }
+        // --------------------------------------------------
+        $count: 3;
+        #workContainer .work-list-modal .work-list-box {
+            width: 356px;
+            height: 90%;
+            ul {
+                padding-top: 3.5rem;
+                box-sizing: border-box;
+                width: 356px;
+                height: 100%;
+                li {
+                    margin: auto;
+                    height: 148px;
+                    margin: 2rem 0;
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                }
+            }
+            .port-img {
+                width: 356px;
+                height: 160px;
+            }
+            .port-text {
+                padding: .5rem .5rem;
+                width: 356px;
+                height: 160px;
+                background-color: #fff;
+                p {
+                    margin-bottom: 1rem;
+                }
+                a {
+                    background-color: #e0e0e0;
+                }
+            }
+            .close-btn {
+                top: 1rem;
+                right: 1rem;
+                border-radius: .5rem;
+                span {
+                    width: 16px;
+                    height: 2.2px;
+                }
+            }
+        }
+        // --------------------------------------------------
+        .port-btn {
+            right: 1.5rem;
+            bottom: 2rem;
+            width: 80px;
+            height: 0;
+            @include port-btn($selector: button, $wh: 32px);
+        }
+        .port-img {
+            width: 100%;
+            height: 252px;
+            margin-bottom: 0.75rem;
+        }
+        .port-text {
+            padding: 1rem 0 0 1rem;
+            width: 100%;
+            height: 148px;
+            p {
+                font-size: 0.75rem;
+                margin-bottom: .75em;
+                strong {
+                    display: inline-block;
+                    margin-bottom: .5rem;
+                    font-size: 1rem;
+                }
+                em {
+                    display: inline-block;
+                    font-size: 0.75rem;
+                   
+                }
+            }
+            div {
+                width: 112px;
+                height: 32px;
+                font-size: 0.75rem;
+                line-height: 2.25rem;
+            }
+        }
+
+
+        //------------------------------------------------------------------------------
+        #footBox {
+            padding: 5rem 0 4rem;
+        }
+        .my-contact {
+            width: 240px;
+            ul {
+                width: 100%;
+                height: 100%;
+                li {
+                    width: 100%;
+                    a {
+                        @include link;
+                        &:first-of-type {
+                            margin-bottom: 1.75rem;
+                        }
+                    }
+                }
+            }
+        }
+        .copy-right {
+            font-size: 0.75rem;
+            line-height: 1.5rem;
+        }
+
+        //------------------------------------------------------------------------------
     }
 }

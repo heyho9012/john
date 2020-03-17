@@ -1,0 +1,510 @@
+// main.scss
+/* main.css */
+@import './_base/mixin';
+//------------------------------------------------------------------------------
+@import "_temp/_mobile";
+@import "_temp/_tablet";
+@import "_temp/_pc_default";
+@import "_temp/_pc_full";
+
+//------------------------------------------------------------------------------
+article,
+footer {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+h2 {
+    text-align: center;
+    text-transform: capitalize;
+}
+h3 {
+    text-transform: capitalize;
+}
+article:nth-of-type(2n) {
+    background-color: #e0e0e0;
+}
+
+article:first-of-type,
+footer {
+    background-color: #060606;
+}
+
+//------------------------------------------------------------------------------
+#headBox {
+    @include flex ($ai : flex-end);
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    nav {
+        @include flex ($jc : space-between);
+        h1 {
+            @include background ('../img/logo.png',50%,50%);
+            height: 100%;
+            a {
+                @include link;
+            }
+        }
+        ul {
+            @include flex ($jc : space-between);
+            li {
+                height: 100%;
+                border-radius: 100%;
+                box-sizing: border-box;
+                &:last-of-type {
+                    position: relative;
+                    border: 1.5px solid #e0e0e0;
+                    transition: all .8s ease;
+                    &.menu-act {
+                        transform: rotate(360deg);
+                    }
+                    button {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 1500;
+                        transform: translate(-50%, -50%);
+                        width: 16px;
+                        height: 12px;
+                        
+                        span {
+                            display: block;
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            border-radius: 0.0625rem;
+                            background-color: #fff;
+                            transition: all 0.5s ease;
+                        }
+                        span:nth-child(1) {
+                            top: 0;
+                        }
+                        span:nth-child(2) {
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                        span:nth-child(3) {
+                            bottom: 0;
+                        }
+                        &.menu-act span:nth-child(1) {
+                            top: 50%;
+                            transform: translateY(-50%) rotate(45deg);
+                        }
+                        &.menu-act span:nth-child(2) {
+                            opacity: 0;
+                        }
+                        &.menu-act span:nth-child(3) {
+                            bottom: 50%;
+                            transform: translateY(50%) rotate(-45deg);
+                        }
+                    }
+                }
+                a {
+                    @include link;
+                    border: 1.5px solid #060606;
+                    box-sizing: border-box;
+                    border-radius: inherit;
+                    color: #e0e0e0;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    text-align: center;
+                    transition: all 0.8s ease;
+                    &:focus,
+                    &:hover {
+                        border: 1.5px solid #e0e0e0;
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
+}
+.menu-modal {
+    display: none;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    ul {
+        @include flex($fd: column);
+        width: 100%;
+        height: 100%;
+        li {
+            &:nth-of-type(2) {
+                margin: 2rem 0;
+            }
+            a {
+                @include link;
+                color: #fff;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+#mainContainer {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    perspective: 2000px;
+    div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: left;
+        transform-style: preserve-3d;
+        animation: main-animation 7s infinite ease alternate;
+        p:last-of-type {
+            font-weight: normal;
+            text-transform: capitalize;
+            animation: main-animation-2 9s infinite ease;
+        }
+        span {
+            font-weight: normal;
+            text-transform: none;
+        }
+        em {
+            display: block;
+        }
+        em:first-of-type {
+            text-transform: capitalize;
+            animation: t-z 8s infinite ease alternate;
+        }
+        em:last-of-type {
+            animation: t-z 6s infinite ease alternate-reverse;
+        }
+    }
+    div:hover {
+        transform: translate(-50%, -50%);
+        animation-play-state: paused;
+        em,
+        p {
+            animation-play-state: paused;
+        }
+    }
+
+    a {
+        @include flex($fd: column);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        text-transform: capitalize;
+        animation: bounce 1s linear infinite alternate;
+        em {
+            display: block;
+        }
+        i {
+            transform: rotate(90deg);
+            line-height: 0.5rem;
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+#aboutTitle {
+    div {
+        text-align: left;
+        &:first-of-type {
+            font-weight: bold;
+        }
+        strong {
+            text-transform: capitalize;
+        }
+        span {
+            font-weight: bold;
+        }
+    }
+    > button {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        bottom: 2.5rem;
+        right: 2.5rem;
+        width: 48px;
+        height: 48px;
+        box-sizing: content-box;
+        background-color: #060606;
+        border-radius: 0.5rem;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 2.5rem;
+        &:hover, &:focus {
+            animation: bounce .5s ease infinite alternate;
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+#aboutContainer {
+    @include flex;
+}
+.about-content {
+    @include flex($jc: space-between);
+}
+.skill-box {
+    @include flex($jc: space-between, $fd: column);
+    h3 {
+        width: 100%;
+        text-align: left;
+    }
+    ul {
+        @include flex($jc: flex-start, $ai: flex-start);
+        overflow: hidden;
+        flex-flow: row wrap;
+        li {
+            background-color: #060606;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            transition: all .5s ease;
+        }
+    }
+    &.skill-act {
+        @for $i from 0 to 12 {
+            li:nth-of-type(#{$i}) {
+                transition-delay: #{.1 * $i}s;
+                left: 0;
+            }
+        }
+    }
+}
+.history-box {
+    @include flex($jc: space-between, $fd: column);
+    h3 {
+        width: 100%;
+        text-align: left;
+    }
+    ul {
+        @include flex($jc: space-between, $fd: column);
+        overflow: hidden;
+        li {
+            background-color: #e0e0e0;
+            color: #060606;
+            transition: all .5s ease;
+            dl {
+                @include flex($jc: flex-start);
+                width: 100%;
+                height: 100%;
+                dt {
+                    font-weight: bold;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    &.history-act {
+        @for $i from 0 to 6 {
+            li:nth-of-type(#{$i}) {
+                transition-delay: #{.2 * $i}s;
+                right: 0;
+            }
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+#workTitle {
+    p {
+        margin: auto;
+        font-weight: 600;
+        text-align: left;
+    }
+}
+.work-link {
+    margin: auto;
+    dl {
+        font-weight: bold;
+        text-align: right;
+        text-transform: capitalize;
+        dd {
+            a {
+                @include link();
+            }
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+
+#workContainer {
+    @include flex ($fd: column);
+    $count: 3;
+    ul {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        li {
+            @include flex($jc: space-between, $ai: flex-start);
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @for $i from 1 to $count + 1 {
+                &:nth-of-type(#{$i}) > div:first-of-type {
+                    background-image: url('../img/project/project_0'+ $i +'.jpg');
+                }
+            }
+            div:first-of-type {
+                float: left;
+                background-position: 50% 50%;
+                background-size: 480%;
+                background-repeat: no-repeat;
+                transition: all 1s ease;
+                &:hover {
+                    background-size: 100%;
+                }
+            }
+            > div:last-of-type {
+                float: right;
+                box-sizing: border-box;
+                background-color: #e0e0e0;
+                @include port-btn($selector: a,$c: #fff);
+                a {
+                    display: flex;
+                }
+            }
+        }
+    }
+    &.click-active {
+        display: block;
+        height: 100% * $count;
+        .work-list-box {
+            height: 80% * $count;
+            ul {
+                height: 100%;
+                li {
+                    height: 100% / $count;
+                }
+            }
+        }
+    }
+}
+.work-list-box {
+    position: relative;
+    overflow: hidden;
+}
+.port-btn {
+    @include flex($jc: space-between, $ai: flex-start);
+    flex-flow: row wrap;
+    position: absolute;
+    @include port-btn($selector: button);
+    button {
+        &:first-of-type {
+            transform: rotate(180deg);
+        }
+    }
+}
+.port-text {
+    strong {
+        font-weight: bold;
+    }
+    em {
+        display: block;
+        font-weight: 600;
+    }
+    div {
+        @include flex($jc: space-between);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+#workContainer .work-list-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 6, 6, .8);
+    .close-btn {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 1.5rem;
+        right: 2.5rem;
+        width: 28px;
+        height: 28px;
+        background-color: #fff;
+        span {
+            @include center;
+            width: 24px;
+            height: 2.5px;
+            background-color: #060606;
+            &:first-of-type {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &:last-of-type {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+    .work-list-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 1rem;
+        background-color: #fff;
+        transition: all 1.2s ease;
+        ul {
+            overflow-y: hidden;
+            overflow-y: scroll;
+            
+            li {
+                display: block;
+                position: static;
+            }
+        }
+        .port-btn {
+            display: none;
+        }
+        .port-text {
+            text-align: left;
+        }
+    }
+    &.modal-active {
+        .work-list-box {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+}
+//------------------------------------------------------------------------------
+#footBox {
+    @include flex ($fd: column, $jc: space-between);
+    color: #fff;
+    a {
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+    }
+    div {
+        text-align: center;
+    }
+}
+
+//------------------------------------------------------------------------------
+
+@include pc_full;
+@include pc_default;
+@include tablet;
+@include mobile;

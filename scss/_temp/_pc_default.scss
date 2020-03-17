@@ -1,114 +1,259 @@
 @mixin pc_default {
     @media screen and (min-width:1280px) and (max-width:1919px) {
         @content;
-        #headBox{height:122px;padding-top:4rem;}
-        nav{width:1100px;height:58px;
-            h1{width:58px;height:58px;}
-            ul{width:332px;
-                li{margin-right:2.0625rem;width:58px;height:58px;line-height:3.4375rem;font-size:12px;
-        }}}
 
-//------------------------------------------------------------------------------
-        #mainBox{
-            ul{width:820px;height:200px;
-                li{width:490px;height:200px;}
-                li:nth-child(3){width:820px;}
-                h2{font-size:9rem;}
-                h2:after,h2::after{content:"";display:block;bottom:-24px;width:480px;height:22px;}
-                li:nth-child(3) h2:after,li:nth-child(3) h2::after{width:800px;}
-            }
-            p{top:70%;left:50%;transform:translate(-50%,-50%);width:800px;height:30px;}
-            div{left:0;right:0;bottom:48px;width:50px;height:34px;
-                a{font-size:1.25rem;line-height:2.125rem;}
+        //------------------------------------------------------------------------------
+        h2 {
+            font-size: 3rem;
+        }
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        //------------------------------------------------------------------------------
+        #headBox {
+            height: 122px;
+            nav {
+                width: 1100px;
+                height: 58px;
+                h1 {
+                    width: 58px;
+                }
+                ul {
+                    width: 300px;
+                    li {
+                        &:last-of-type {
+                            display: none;
+                        }
+                        width: 58px;
+                        line-height: 3.5rem;
+                    }
+                }
             }
         }
 
-//------------------------------------------------------------------------------
-        #aboutBox{
-            h2{top:700px;right:90px;font-size:10rem;width:420px;height:240px;opacity:0;}
-            h2:after,h2::after{content:"";display:block;bottom:20px;width:420px;height:28px;}
-        }
-            .about_text{top:700px;left:90px;width:720px;height:128px;line-height:2rem;opacity:0;
-                span{font-size:1.25rem;display:inline-table;z-index:100;}
-                span::before{content:"";display:block;z-index:-1;top:0;left:-100%;}
+        //------------------------------------------------------------------------------
+        #mainContainer {
+            p:first-of-type {
+                font-size: 2.25rem;
+                em:first-of-type {
+                    margin-bottom: 0.75rem;
+                }
+                em:last-of-type {
+                    margin-bottom: 0.75rem;
+                    font-size: 3.75rem;
+                    line-height: 3.75rem;
+                }
             }
-            #aboutBox h2.action,.about_text.action{top:50%;transform:translateY(-50%);opacity:1;}
-            .fix_menu{right:60px;}
-            .fix_menu.real_fix{right:60px;}
-        
-//------------------------------------------------------------------------------
-        #aboutCon{padding-top:4rem;}
-        .about_list{width:1100px;height:660px;margin:auto;
-            ul{
-                li{width:33.333333%;
-                    & dt{margin-bottom:4rem;}
-                    dl{
-                        dt{height:16%;font-size:5rem; p{font-size:1rem;color:#777;line-height:0;}}
-                        dd{height:82%;font-size:0.875rem;line-height:1.75rem;span{font-size:0.625rem;}}
-        }}}}
-        .history{
-            div{top:-100%;left:50%;transform:traslateX(-50%);width:1px;}
-            ul{
-                li{width:100%;height:72px;font-size:0.875rem;line-height:0;margin-bottom:0.875rem;
-                    &:nth-child(2n){text-align:right;span{margin-right:273px;margin-left:0;}p{margin-left:-50%;}}
-                    p{width:42%;margin-right:-50%;line-height:1.25rem;}
-            }}}
-        
-//------------------------------------------------------------------------------
-#aboutCon_02{padding-top:4rem;
-    h2{height:auto;font-size:6.25rem;margin-bottom:4.25rem; p{font-size:1rem;line-height:0;} }
-    dl{height:244px;
-        dt{height:32px;margin-bottom:2.25rem;font-size:1.5rem;}
-        dd{height:162px;
-            ul{
-                li{width:108px;margin-right:40.4px; &:last-child{margin-right:0;} div{width:104px;height:104px;} p{margin-top:1.875rem;}}
-}}}}
-.my_can+em{position:absolute;top:36px;left:50%;transform:translateX(-50%);font-size:1.5rem;span{font-size:0.75rem;}}
-.pub{width:1000px;margin:auto;margin-bottom:3rem;}
-.des{width:408px;margin:auto;}
+            a {
+                bottom: 2.5rem;
+                em {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+        //------------------------------------------------------------------------------
+        #aboutTitle {
+            padding-top: 11.25rem;
+        }
+        .about-text {
+            margin: 5rem auto 0;
+            width: 390px;
+            height: 310px;
+            div:first-of-type {
+                margin-bottom: 4rem;
+                line-height: 2rem;
+            }
+            div:last-of-type {
+                line-height: 2rem;
+            }
+            span {
+                font-size: 1.5rem;
+            }
+        }
 
-//------------------------------------------------------------------------------
-#workBox{
-    h2{top:700px;font-size:10rem;width:420px;height:200px;opacity:0;}
-    h2:after,h2::after{content:"";display:block;bottom:-24px;width:420px;height:28px;}
-    dl{right:90px;bottom:108px;width:300px;height:108px;text-align: right;
-        dt{height:28px;font-size:1.25rem;margin-bottom:1.75rem;}
-        dd{height:64px;padding-left:12.125rem;
-            a{display:block;width:74px;height:28px;margin-bottom:0.5rem;font-size:1rem;text-align:right;}
-            a:last-child{width:60px;margin-bottom:0;}
-}}}
+        //------------------------------------------------------------------------------
+        .about-content {
+            width: 1100px;
+            div {
+                height: 554px;
+            }
+        }
+        .skill-box {
+            width: 528px;
+            ul {
+                margin-bottom: 2.75rem;
+                width: 100%;
+                height: 400px;
+                li {
+                    position: relative;
+                    left: -100%;
+                    margin: 0 1rem 1rem 0;
+                    width: 120px;
+                    height: 120px;
+                    font-size: 0.875rem;
+                    line-height: 7.5rem;
+                    &:nth-child(4n) {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .history-box {
+            width: 480px;
+            ul {
+                width: 100%;
+                height: 446px;
+                li {
+                    position: relative;
+                    right: -100%;
+                    width: 100%;
+                    height: 76px;
+                    dl {
+                        dt {
+                            margin: 0 3rem 0 4rem;
+                            width: 140px;
+                            font-size: 0.875rem;
+                        }
+                        dd {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+        //------------------------------------------------------------------------------
+        #workTitle {
+            padding-top: 11.25rem;
+            h2 {
+                margin-bottom: 1.5rem;
+            }
+            p {
+                width: 232px;
+                line-height: 1.5rem;
+            }
+        }
+        .work-link {
+            width: 940px;
+            dl {
+                margin-top: 14.75rem;
+                width: 100%;
+                dt {
+                    font-size: 1.25rem;
+                    margin-bottom: 1.75rem;
+                }
+                dd {
+                    a:first-of-type {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
 
-//------------------------------------------------------------------------------
-#workCon{height:300%;
-    >ul{
-        >li{height:33.333333%;
-            &:last-child{margin-right:0;}
-            >dl{padding-top:4rem;
-                >dt{height:10%;font-size:70px;margin-bottom:100px;}
-                >dd{width:70%;height:60%;}
-}}}}
-.project_img{width:50%;
-    &:hover{background-size:108%;}
-}
-.project_text{width:50%;
-    dl{
-        dt{height:20%;font-size:1.875rem;line-height:1.75rem;padding-top:1.5rem;padding-left:3rem; span{font-size:1rem;line-height:0;}}
-        dd{height:80%;padding-left:3rem;padding-top:1.5rem;
-            a{@include link(162px,42px);line-height:42px;font-size:1.25rem;margin-top:8rem;
-                &:hover{border:2px solid #1d1d1d;line-height:38px;}
-}}}}
+        //------------------------------------------------------------------------------
+        #workContainer {
+            h3 {
+                margin-bottom: 2.5rem;
+                width: 1100px;
+            }
+            @include all-btn;
+        }
+        #workContainer > .work-list-box {
+            margin-bottom: 5.375rem;
+            width: 1100px;
+            height: 400px;
+        }
+        // --------------------------------------------------
+        $count: 3;
+        #workContainer .work-list-modal .work-list-box {
+            padding: 4rem;
+            width: 1100px;
+            height: 80%;
+            ul {
+                width: 1100px;
+                height: 640px;
+                li {
+                    margin: auto;
+                    padding: 0 6rem;
+                    box-sizing: border-box;
+                    height: 280px;
+                    margin: 2rem 0;
+                }
+            }
+            .port-img {
+                width: 440px;
+                height: 280px;
+            }
+            .port-text {
+                padding: 1.5rem 1.25rem;
+                width: 440px;
+                height: 280px;
+                background-color: #fff;
+                p {
+                    margin-bottom: 1.75rem;
+                }
+                a {
+                    background-color: #e0e0e0;
+                }
+            }
+            .close-btn {
+                right: 1.5rem;
+            }
+        }
+        // --------------------------------------------------
+        .port-btn {
+            right: 2rem;
+            bottom: 2.25rem;
+            width: 88px;
+            height: 0;
+        }
+        .port-img {
+            width: 560px;
+            height: 400px;
+        }
+        .port-text {
+            padding: 2.5rem 0 0 2rem;
+            width: 480px;
+            height: 320px;
+            p {
+                margin-bottom: 3rem;
+                strong {
+                    font-size: 1.5rem;
+                }
+            }
+            div {
+                width: 144px;
+                height: 36px;
+                line-height: 2.25rem;
+            }
+        }
 
-//------------------------------------------------------------------------------
-#footBox{
-    ul{width:290px;height:100px;
-        li{height:48px;margin-bottom:0.625rem;
-            &:last-child{margin-bottom:0;}
-            a{font-size:1.25rem;line-height:3.125rem;
-                &::before{content:"";bottom:0;height:1.2px;opacity:0;}
-}}}}
-    .timer{bottom:120px;width:204px;height:50px;line-height:3.125rem;font-size:1.75rem;}
-    .copy{bottom:54px;width:516px;height:52px;font-size:0.75rem;line-height:1.625rem;}
+        //------------------------------------------------------------------------------
+        #footBox {
+            padding: 11.25rem 0 6.125rem;
+        }
+        .my-contact {
+            width: 240px;
+            ul {
+                width: 100%;
+                height: 100%;
+                li {
+                    width: 100%;
+                    a {
+                        @include link;
+                        font-size: 1.25rem;
+                        &:first-of-type {
+                            margin-bottom: 1.75rem;
+                        }
+                    }
+                }
+            }
+        }
+        .copy-right {
+            font-size: 0.75rem;
+            line-height: 1.5rem;
+        }
 
-//------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------
     }
 }
