@@ -16,7 +16,9 @@ portBtn.on('click', function(e) {
     e.preventDefault();
 
     let hasNext = $(this).hasClass('next-btn');
-    
+    portBtn.attr("disabled",true);
+    setTimeout(function(){portBtn.removeAttr("disabled");},500);
+
     if (hasNext) {
         btnCount++;
         if (btnCount > workLen - 1) {
@@ -24,11 +26,10 @@ portBtn.on('click', function(e) {
         }
     } else {
         btnCount--;
-        if (btnCount < -1) {
-            btnCount = workLen;
+        if (btnCount < 0) {
+            btnCount = workLen - 1;
         }
     }
-    
     workList.find('li').stop().fadeOut(timed);
     workList.find('li').eq(btnCount).stop().fadeIn(timed);
 });
