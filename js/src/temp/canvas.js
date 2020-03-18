@@ -145,33 +145,14 @@ let trans = {
         };
     },
     steps: function (_obj_, sz, rot, pos, disp) {
-        let _args = trans
-            .parts
-            .sz(_obj_, sz);
-        _args = trans
-            .parts
-            .rot
-            .x(_args, rot);
-        _args = trans
-            .parts
-            .rot
-            .y(_args, rot);
-        _args = trans
-            .parts
-            .rot
-            .z(_args, rot);
-        _args = trans
-            .parts
-            .pos(_args, pos);
-        _args = trans
-            .pov
-            .plane(_args);
-        _args = trans
-            .pov
-            .theta(_args);
-        _args = trans
-            .pov
-            .set(_args);
+        let _args = trans.parts.sz(_obj_, sz);
+        _args = trans.parts.rot.x(_args, rot);
+        _args = trans.parts.rot.y(_args, rot);
+        _args = trans.parts.rot.z(_args, rot);
+        _args = trans.parts.pos(_args, pos);
+        _args = trans.pov.plane(_args);
+        _args = trans.pov.theta(_args);
+        _args = trans.pov.set(_args);
         _args = trans.persp(_args);
         _args = trans.disp(_args, disp);
         return _args;
@@ -236,9 +217,7 @@ let trans = {
     };
 
     Build.prototype.add = function () {
-        this
-            .letr
-            .push(new threeD({
+        this.letr.push(new threeD({
                 vtx: {
                     x: rnd(),
                     y: rnd(),
@@ -259,14 +238,12 @@ let trans = {
                     y: this.diff * Math.sin(360 * Math.random() * Math.PI / 180),
                     z: this.diff * Math.sin(360 * Math.random() * Math.PI / 180)
                 }
-            }));
-        this
-            .calc
-            .push({
+        }));
+        this.calc.push({
                 x: 360 * Math.random(),
                 y: 360 * Math.random(),
                 z: 360 * Math.random()
-            });
+        });
     };
 
     Build.prototype.upd = function () {
@@ -275,15 +252,15 @@ let trans = {
     };
 
     Build.prototype.draw = function () {
-        this
-            .$
-            .clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.$.clearRect(0, 0, this.canvas.width, this.canvas.height);
         cam.upd();
         this.rotObj.x += 0.1;
         this.rotObj.y += 0.1;
         this.rotObj.z += 0.1;
-
-        for (let i = 0; i < this.letr.length; i++) {
+        for ( let i = 0; i < this.letr.length; i++) {
+            if (this.canvas.width <= mobile) {
+                this.letr.length = 120;
+            }
             for (let val in this.calc[i]) {
                 if (this.calc[i].hasOwnProperty(val)) {
                     this.calc[i][val] += this.vel;
@@ -292,59 +269,46 @@ let trans = {
                     }
                 }
 
-            this
-                .letr[i]
-                .transIn
-                .pos = {
+            this.letr[i].transIn.pos = {
                     x: this.diff * Math.cos(this.calc[i].x * Math.PI / 180),
                     y: this.diff * Math.sin(this.calc[i].y * Math.PI / 180),
                     z: this.diff * Math.sin(this.calc[i].z * Math.PI / 180)
                 };
-            this
-                .letr[i]
-                .transIn
-                .rot = this.rotObj;
-            this
-                .letr[i]
-                .transIn
-                .sz = this.objSz;
-            this
-                .letr[i]
-                .vupd();
+            this.letr[i].transIn.rot = this.rotObj;
+            this.letr[i].transIn.sz = this.objSz;
+            this.letr[i].vupd();
             if (this.letr[i].transOut.p < 0) 
                 continue;
-            let g = this
-                .$
-                .createRadialGradient(
+            let g = this.$.createRadialGradient(
                     this.letr[i].transOut.x,
                     this.letr[i].transOut.y,
                     this.letr[i].transOut.p,
                     this.letr[i].transOut.x,
                     this.letr[i].transOut.y,
                     this.letr[i].transOut.p * 2
-                );
+            );
             this.$.globalCompositeOperation = 'lighter';
             g.addColorStop(0, 'hsla(255, 255%, 255%, 1)');
             this.$.fillStyle = g;
-            this
-                .$
-                .beginPath();
-            this
-                .$
-                .arc(
+            this.$.beginPath();
+            let starSize = 1.75;
+            if (this.canvas.width <= mobile) {
+                starSize = 1.2;
+            }
+            this.$.arc(
                     this.letr[i].transOut.x,
                     this.letr[i].transOut.y,
-                    this.letr[i].transOut.p * 2,
+                    this.letr[i].transOut.p * starSize,
                     0,
                     Math.PI * 2,
                     false
-                );
-            this
-                .$
-                .fill();
-            this
-                .$
-                .closePath();
+            );
+            this.$.fill();
+            this.$.shadowColor = "rgba(255,255,255,0.5)";
+            this.$.shadowBlur = 10;
+            this.$.shadowOffsetX = 1;
+            this.$.shadowOffsetY = 1;
+            this.$.closePath();
         }
     };
     Build.prototype.anim = function () {
@@ -369,7 +333,9 @@ let trans = {
     
 })();
 
-// window.addEventListener('resize', function () {
-//     canvas.width = w = window.innerWidth;
-//     canvas.height = h = window.innerHeight;
-// }, false);
+const canvas = document.querySelector('#canv');
+
+window.addEventListener('resize', function () {
+    canvas.width = w = window.innerWidth;
+    canvas.height = h = window.innerHeight;
+}, false);
