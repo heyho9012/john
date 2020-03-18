@@ -1,4 +1,3 @@
-
     const mobile=767, tablet=1279,laptop=1919, pc=1920;
     const device = ['mobile', 'tablet', 'laptop', 'pcfull'];
 
@@ -10,7 +9,6 @@
     } else {
       nowb = 'ohter';
     }
-
 // --------------------------------------------------------------
     //사이즈 변경 체크
     $(window).on('resize', function () {
@@ -25,9 +23,7 @@
         }
     });
 
-    
-
-// --------------------------------------------------------------
+  // --------------------------------------------------------------
     let nowSize;
     let beforeW = $(window).outerWidth(true);//margin값까지 포함.
     //각 디바이스 상황에 맞는 data 처리

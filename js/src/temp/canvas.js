@@ -259,15 +259,15 @@ let trans = {
         this.rotObj.z += 0.1;
         for ( let i = 0; i < this.letr.length; i++) {
             if (this.canvas.width <= mobile) {
-                this.letr.length = 120;
-            }
+                this.letr.length = 140;
+            } 
             for (let val in this.calc[i]) {
                 if (this.calc[i].hasOwnProperty(val)) {
                     this.calc[i][val] += this.vel;
                     if (this.calc[i][val] > this.lim) 
                         this.calc[i][val] = 0;
                     }
-                }
+            }
 
             this.letr[i].transIn.pos = {
                     x: this.diff * Math.cos(this.calc[i].x * Math.PI / 180),
