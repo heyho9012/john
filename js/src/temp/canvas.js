@@ -368,7 +368,8 @@ let trans = {
     app.run();
     
 })();
-window.addEventListener('resize', function () {
-    canvas.width = w = window.innerWidth;
-    canvas.height = h = window.innerHeight;
-}, false);
+
+// window.addEventListener('resize', function () {
+//     canvas.width = w = window.innerWidth;
+//     canvas.height = h = window.innerHeight;
+// }, false);

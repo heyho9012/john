@@ -6,12 +6,11 @@
     body.append('<script src="../js/src/temp/rwd.js"></script>');
     body.append('<script src="../js/src/temp/about.js"></script>');
     body.append('<script src="../js/src/temp/work.js"></script>');
+    body.append('<script src="../js/src/temp/canvas.js"></script>');
 
     // ---------------------------------------------------------------------
     const headBox = wrap.find('#headBox');
     const menuBtn = headBox.find('.menu-icon');
-    
-
     let menuClone = headBox.find('ul').clone();
     const menuModal = headBox.find('.menu-modal');
     menuClone.appendTo(menuModal);
