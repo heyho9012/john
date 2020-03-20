@@ -169,6 +169,9 @@ footer {
     overflow-x: hidden;
     perspective: 2000px;
     background-color: transparent;
+    h2 {
+        @include hidden;
+    }
     div {
         position: absolute;
         top: 50%;

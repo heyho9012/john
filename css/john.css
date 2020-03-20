@@ -76,6 +76,8 @@ footer { background-color: #060606; }
 
 #mainContainer { top: 0; left: 0; overflow-x: hidden; perspective: 2000px; background-color: transparent; }
 
+#mainContainer h2 { position: absolute; z-index: -1; display: block; width: 0; height: 0; overflow: hidden; }
+
 #mainContainer div { position: absolute; top: 50%; left: 50%; color: #ffffff; font-weight: bold; text-transform: uppercase; text-align: left; transform-style: preserve-3d; animation: main-animation 7s infinite ease alternate; }
 
 #mainContainer div p:last-of-type { font-weight: normal; text-transform: capitalize; text-shadow: 0 0 0.8px rgba(255, 255, 255, 0.4); animation: main-animation-2 9s infinite ease; }
