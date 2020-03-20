@@ -3,10 +3,10 @@
         @content;
         //------------------------------------------------------------------------------
         h2 {
-            font-size: 3rem;
+            font-size: nth($h2-size,2);
         }
         h3 {
-            font-size: 1.75rem;
+            font-size: nth($h2-size,2);
         }
 
         //------------------------------------------------------------------------------
@@ -175,7 +175,6 @@
                 margin-bottom: 2.75rem;
                 width: 580px;
             }
-            @include all-btn;
             ul {
                 li {
                     flex-direction: column;
@@ -215,12 +214,8 @@
                 padding: 1rem 1rem;
                 width: 580px;
                 height: 280px;
-                background-color: #fff;
                 p {
                     margin-bottom: 1.75rem;
-                }
-                a {
-                    background-color: #e0e0e0;
                 }
             }
             .close-btn {

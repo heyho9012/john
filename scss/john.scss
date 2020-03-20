@@ -1,6 +1,7 @@
 // main.scss
 /* main.css */
-@import './_base/mixin';
+@import './_base/_var';
+@import './_base/_mixin';
 //------------------------------------------------------------------------------
 @import "_temp/_mobile";
 @import "_temp/_tablet";
@@ -23,11 +24,11 @@ h3 {
     text-transform: capitalize;
 }
 article:nth-of-type(2n) {
-    background-color: #e0e0e0;
+    background-color: $beige;
 }
 
 footer {
-    background-color: #060606;
+    background-color: $black;
 }
 
 
@@ -57,7 +58,7 @@ footer {
                 box-sizing: border-box;
                 &:last-of-type {
                     position: relative;
-                    border: 1.5px solid #e0e0e0;
+                    border: 1.5px solid $beige;
                     transition: all .8s ease;
                     &.menu-act {
                         transform: rotate(360deg);
@@ -77,7 +78,7 @@ footer {
                             width: 100%;
                             height: 2px;
                             border-radius: 0.0625rem;
-                            background-color: #fff;
+                            background-color: $white;
                             transition: all 0.5s ease;
                         }
                         span:nth-child(1) {
@@ -105,17 +106,17 @@ footer {
                 }
                 a {
                     @include link;
-                    border: 1.5px solid #060606;
+                    border: 1.5px solid $black;
                     box-sizing: border-box;
                     border-radius: inherit;
-                    color: #e0e0e0;
+                    color: $beige;
                     font-size: 0.75rem;
                     font-weight: 600;
                     text-align: center;
                     transition: all 0.8s ease;
                     &:focus,
                     &:hover {
-                        border: 1.5px solid #e0e0e0;
+                        border: 1.5px solid $beige;
                         transform: rotate(360deg);
                     }
                 }
@@ -131,7 +132,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: $black;
     ul {
         @include flex($fd: column);
         width: 100%;
@@ -142,7 +143,7 @@ footer {
             }
             a {
                 @include link;
-                color: #fff;
+                color: $white;
                 font-size: 1rem;
                 font-weight: bold;
                 text-align: center;
@@ -158,7 +159,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #060606;
+    background-color: $black;
 }
 
 //------------------------------------------------------------------------------
@@ -172,29 +173,35 @@ footer {
         position: absolute;
         top: 50%;
         left: 50%;
-        color: #fff;
+        color: $white;
         font-weight: bold;
         text-transform: uppercase;
         text-align: left;
+        
         transform-style: preserve-3d;
         animation: main-animation 7s infinite ease alternate;
         p:last-of-type {
             font-weight: normal;
             text-transform: capitalize;
+            text-shadow: 0 0 .8px $text-shadow;
             animation: main-animation-2 9s infinite ease;
         }
         span {
             font-weight: normal;
             text-transform: none;
+            text-shadow: 0 0 1.5px $text-shadow;
         }
         em {
             display: block;
+            
         }
         em:first-of-type {
             text-transform: capitalize;
+            text-shadow: 0 0 1.5px $text-shadow;
             animation: t-z 8s infinite ease alternate;
         }
         em:last-of-type {
+            text-shadow: 0 0 3.5px $text-shadow;
             animation: t-z 6s infinite ease alternate-reverse;
         }
     }
@@ -212,7 +219,7 @@ footer {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        color: #fff;
+        color: $white;
         text-transform: capitalize;
         animation: bounce 1s linear infinite alternate;
         em {
@@ -248,13 +255,15 @@ footer {
         width: 48px;
         height: 48px;
         box-sizing: content-box;
-        background-color: #060606;
+        background-color: $black;
         border-radius: 0.5rem;
-        color: #fff;
+        color: $white;
         text-align: center;
-        text-transform: uppercase;
+        text-transform: capitalize;
         line-height: 2.5rem;
+        transition: all .3s ease;
         &:hover, &:focus {
+            background-color: $navy;
             animation: bounce .5s ease infinite alternate;
         }
     }
@@ -278,14 +287,16 @@ footer {
         overflow: hidden;
         flex-flow: row wrap;
         li {
-            background-color: #060606;
-            color: #fff;
+            position: relative;
+            left: -100%;
+            background-color: $black;
+            color: $white;
             font-weight: 600;
             text-align: center;
             transition: all .5s ease;
         }
     }
-    &.skill-act {
+    &.scroll-act {
         @for $i from 0 to 12 {
             li:nth-of-type(#{$i}) {
                 transition-delay: #{.1 * $i}s;
@@ -304,8 +315,10 @@ footer {
         @include flex($jc: space-between, $fd: column);
         overflow: hidden;
         li {
-            background-color: #e0e0e0;
-            color: #060606;
+            position: relative;
+            right: -100%;
+            background-color: $beige;
+            color: $black;
             transition: all .5s ease;
             dl {
                 @include flex($jc: flex-start);
@@ -318,7 +331,7 @@ footer {
             }
         }
     }
-    &.history-act {
+    &.scroll-act {
         @for $i from 0 to 6 {
             li:nth-of-type(#{$i}) {
                 transition-delay: #{.2 * $i}s;
@@ -343,8 +356,15 @@ footer {
         text-align: right;
         text-transform: capitalize;
         dd {
+            @include flex($jc: space-between, $ai: flex-end, $fd: column);
             a {
-                @include link();
+                transition: all .2s ease;
+                &:focus,
+                &:hover {
+                    color: $navy;
+                    text-decoration: underline;
+                }
+
             }
         }
     }
@@ -354,7 +374,8 @@ footer {
 
 #workContainer {
     @include flex ($fd: column);
-    $count: 3;
+    @include all-btn;            
+    $work-count: 3;
     ul {
         position: absolute;
         width: 100%;
@@ -367,7 +388,7 @@ footer {
             left: 0;
             width: 100%;
             height: 100%;
-            @for $i from 1 to $count + 1 {
+            @for $i from 1 to $work-count + 1 {
                 &:nth-of-type(#{$i}) > div:first-of-type {
                     background-image: url('../img/project/project_0'+ $i +'.jpg');
                 }
@@ -385,8 +406,8 @@ footer {
             > div:last-of-type {
                 float: right;
                 box-sizing: border-box;
-                background-color: #e0e0e0;
-                @include port-btn($selector: a,$c: #fff);
+                background-color: $beige;
+                @include port-btn($selector: a,$c: $white);
                 a {
                     display: flex;
                 }
@@ -395,13 +416,14 @@ footer {
     }
     &.click-active {
         display: block;
-        height: 100% * $count;
+        height: 100% * $work-count;
         .work-list-box {
-            height: 80% * $count;
+            height: 80% * $work-count;
             ul {
+                box-sizing: border-box;
                 height: 100%;
                 li {
-                    height: 100% / $count;
+                    height: 100% / $work-count;
                 }
             }
         }
@@ -423,13 +445,16 @@ footer {
     }
 }
 .port-text {
-    strong {
-        font-weight: bold;
-    }
-    em {
-        display: block;
+    P {
         font-weight: 600;
+        strong {
+            font-weight: bold;
+        }
+        em {
+            display: block;
+        }
     }
+
     div {
         @include flex($jc: space-between);
         font-weight: bold;
@@ -454,12 +479,12 @@ footer {
         right: 2.5rem;
         width: 28px;
         height: 28px;
-        background-color: #fff;
+        background-color: $white;
         span {
             @include center;
             width: 24px;
             height: 2.5px;
-            background-color: #060606;
+            background-color: $black;
             &:first-of-type {
                 transform: translate(-50%, -50%) rotate(45deg);
             }
@@ -474,7 +499,7 @@ footer {
         left: 50%;
         transform: translate(-50%, -50%) scale(0);
         border-radius: 1rem;
-        background-color: #fff;
+        background-color: $white;
         transition: all 1.2s ease;
         ul {
             overflow-y: hidden;
@@ -490,6 +515,10 @@ footer {
         }
         .port-text {
             text-align: left;
+            background-color: $white;
+            a {
+                background-color: $beige;
+            }
         }
     }
     &.modal-active {
@@ -501,9 +530,9 @@ footer {
 //------------------------------------------------------------------------------
 #footBox {
     @include flex ($fd: column, $jc: space-between);
-    color: #fff;
+    color: $white;
     a {
-        color: #fff;
+        color: $white;
         font-weight: 600;
         text-align: center;
     }

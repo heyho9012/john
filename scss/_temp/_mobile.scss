@@ -4,10 +4,10 @@
 
         //------------------------------------------------------------------------------
         h2 {
-            font-size: 2.5rem;
+            font-size: nth($h2-size,3);
         }
         h3 {
-            font-size: 1.5rem;
+            font-size: nth($h3-size,3);
         }
 
         //------------------------------------------------------------------------------
@@ -39,15 +39,21 @@
             div {
                 transform: translate(-50%, -50%);
             }
+                
             p:first-of-type {
                 font-size: 1.25rem;
                 em:first-of-type {
                     margin-bottom: 0.75rem;
+                    text-shadow: 0 0 .5px rgba(255, 255, 255, .4);
                 }
                 em:last-of-type {
                     margin-bottom: 0.75rem;
                     font-size: 2.5rem;
                     line-height: 3.75rem;
+                    text-shadow: 0 0 .15px rgba(255, 255, 255, .4);
+                }
+                span {
+                    text-shadow: 0 0 .5px rgba(255, 255, 255, .4);
                 }
             }
             a {
@@ -58,8 +64,9 @@
                     margin-bottom: 0.5rem;
                 }
             }
-            p:last-of-type {
+            div p:last-of-type {
                 font-size: 0.625rem;
+                text-shadow: 0 0 .25px rgba(255, 255, 255, .4);
             }
         }
         //------------------------------------------------------------------------------
@@ -173,7 +180,14 @@
                 margin-bottom: 1rem;
                 width: 356px;
             }
-            @include all-btn(200px,40px,0.875rem,6px);
+            >button {
+                width: 200px;
+                height: 40px;
+                span {
+                    font-size: 0.875rem;
+                    line-height: 2.5rem;
+                }
+            }
             ul {
                 li {
                     flex-direction: column;
@@ -196,7 +210,6 @@
             height: 90%;
             ul {
                 padding-top: 3.5rem;
-                box-sizing: border-box;
                 width: 356px;
                 height: 100%;
                 li {
@@ -216,12 +229,8 @@
                 padding: .5rem .5rem;
                 width: 356px;
                 height: 160px;
-                background-color: #fff;
                 p {
                     margin-bottom: 1rem;
-                }
-                a {
-                    background-color: #e0e0e0;
                 }
             }
             .close-btn {

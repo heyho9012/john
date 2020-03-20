@@ -56,18 +56,25 @@ for (let i = 0; i < historyList.length; i++) {
 const topBtn = aboutTitle.find('.top-btn');
 let winH = win.outerHeight();   
 let aboutH = aboutTitle.outerHeight() - (winH / 2);
-let skillOffset=aboutContainer.offset().top - (winH / 2);
+let skillOffset=skillBox.offset().top - (winH / 1.5);
+let historyOffset=historyBox.offset().top - (winH / 1.5);
+
 
 win.on('scroll', function() {
     let winScroll = win.scrollTop();
 
-    if (winScroll > skillOffset) {
-        skillBox.addClass('skill-act');
-        historyBox.addClass('history-act');
-    } else {
-        skillBox.removeClass('skill-act');
-        historyBox.removeClass('history-act');
+    let scrollHandler = function (offset, elem) {
+
+        
+        if (winScroll > offset) {
+            elem.addClass('scroll-act');
+        } else {
+            elem.removeClass('scroll-act');
+        }
     }
+
+    scrollHandler(skillOffset, skillBox);
+    scrollHandler(historyOffset, historyBox);
 });
 
 const topHandler = function () {

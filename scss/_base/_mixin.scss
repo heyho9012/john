@@ -1,0 +1,146 @@
+// mixin.scss
+@mixin link ($w:100%,$h:100%) {
+    display: block;
+    width: $w;
+    height: $h;
+    & > span {
+        @include hidden;
+    }
+}
+// @mixin link()
+
+@mixin hidden {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+// @mixin hidden
+
+@mixin background ($url,$pX,$pY,$c:cover) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: $pX $pY;
+    background-size: $c;
+}
+
+@mixin flex ($fd : row, $jc : center, $ai : center) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin center ($top : 50%, $left : 50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-$top, -$left);
+    text-align: center;
+}
+
+@mixin all-btn ($w: 272px, $h: 56px, $fs: 1.25rem) {
+    > button {
+        position: relative;
+        overflow: hidden;
+        width: $w;
+        height: $h;
+        color: $beige;
+        font-weight: normal;
+        text-align: center;
+        line-height: $h;
+        background-color: $black;
+        span {
+            display: inline-block;
+            opacity: 0;
+            height:100%;
+            font-size: $fs;
+            text-transform: none;
+            transform: translateY(-200%);
+            transition: all .5s $transition-01;
+            @for $i from 2 to 7 {
+                &:nth-of-type(#{$i}) {
+                    transition-delay: .025s * $i;
+                }
+            }
+            &:first-of-type {
+                display: block;
+                opacity: 1;
+                width: 100%;
+                height: 100%;
+                text-transform: capitalize;
+                transform: translateY(0);
+                transition: all .5s $transition-01;
+            }
+        }
+        &:focus,
+        &:hover {
+            .all-text {
+                opacity: 0;
+                transform: translateY(150%);
+            }
+            span:not(:first-of-type) {
+                opacity: 1;
+                transform: translateY(-100%);
+            }
+        }
+    }
+}
+
+@mixin port-btn($selector, $wh: 36px, $c: $beige) {
+    #{$selector} {
+        padding: 0;
+        width: $wh;
+        height: $wh;
+        border-radius: 100%;
+        background-color: $c;
+        transition: all .2s ease;
+        i {
+            margin: auto;
+            color: $black;
+            font-weight: bold;
+            font-size: 0.875rem;
+            line-height: $wh;
+            transition: all .2s ease;
+        }
+        &:focus,
+        &:hover {
+            background-color: $navy;
+            i {
+                color: $beige;
+            }
+        }
+    }
+}
+
+@keyframes main-animation {
+    0% { 
+        top: 52%;
+        transform:  translate(-50%, -50%) scale(1) rotateX(-15deg) rotateY(-30deg);
+    } 100% {
+        top: 48%;
+        transform:  translate(-50%, -50%) scale(1.4) rotateX(30deg) rotateY(15deg);
+    }
+}
+@keyframes t-z{
+    0% { 
+        transform:  translateZ(-100px) rotate(15deg);
+    } 100% {
+        transform:  translateZ(100px) rotate(-15deg);
+    }
+}
+@keyframes main-animation-2 {
+    0% { 
+        transform: rotateX(0);
+    } 100% {
+        transform: rotateX(1turn);
+    }
+}
+
+@keyframes bounce {
+    100% {
+        bottom: 2rem;
+    }
+}
