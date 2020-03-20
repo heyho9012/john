@@ -64,8 +64,6 @@ win.on('scroll', function() {
     let winScroll = win.scrollTop();
 
     let scrollHandler = function (offset, elem) {
-
-        
         if (winScroll > offset) {
             elem.addClass('scroll-act');
         } else {
@@ -91,10 +89,13 @@ const topHandler = function () {
     topBtn.on('click', function () {
         $('html, body').stop().animate({scrollTop: 0});
     });
+    
 };
 
 const topRwd = function (winW) {
-    if (winW <= mobile) {} else {
+    if (winW <= mobile) {
+
+    } else {
         topHandler();
     }
 };

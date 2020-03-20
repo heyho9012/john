@@ -44,7 +44,8 @@ allBtn.on('click', function(e) {
     });
 });
 
-workModal.find('.close-btn').on('click',function () {
+workModal.find('.close-btn').on('click',function (e) {
+    e.preventDefault();
     workModal.removeClass('modal-active',function() {
         workModal.fadeOut(timed * 1.2);
     });
